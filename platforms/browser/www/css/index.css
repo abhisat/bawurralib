@@ -16,7 +16,10 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-
+.cell{
+  border: 2px solid gray;
+  border-top: none;
+}
  .foundation-5-top-bar {
    background: #750000;
    color: #000;

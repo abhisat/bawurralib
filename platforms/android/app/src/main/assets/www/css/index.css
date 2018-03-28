@@ -16,18 +16,25 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-
+.cell{
+  border: 2px solid gray;
+  border-top: none;
+}
  .foundation-5-top-bar {
-   background: #333;
-   color: #fefefe;
+   background: #750000;
+   color: #000;
+ }
+
+ .top-bar{
+   background: #750000 !important;
  }
 
  .foundation-5-top-bar .menu {
-   background: #333;
+   background: #750000;
  }
 
  .foundation-5-top-bar .menu a {
-   color: #fefefe;
+   color: #000000;
  }
 
  .foundation-5-top-bar .is-dropdown-submenu {

@@ -1,0 +1,22 @@
+{"number": 7,
+    "items": {
+        "culture": {
+          "imgSrc": "img/culture.png"
+          },
+        "elders": {
+          "imgSrc": "img/elders.png"
+          },
+        "languages": {
+          "imgSrc": "img/languages.png"
+        },
+        "history": {
+          "imgSrc": "img/history.png"
+        },
+        "future": {
+          "imgSrc": "img/future.png"
+          },
+        "nations": {
+          "imgSrc": "img/nations.png"
+        }
+    }
+  }

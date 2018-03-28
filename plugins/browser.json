@@ -9,6 +9,12 @@
   "installed_plugins": {
     "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "org.bawurra.testapp"
+    },
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "org.bawurra.testapp"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "org.bawurra.testapp"
     }
   },
   "dependent_plugins": {}
