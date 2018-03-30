@@ -1,22 +1,22 @@
 {"number": 6,
     "items": {
         "culture": {
-          "imgSrc": "img/culture.png"
+          "imgSrc": "/img/culture.png"
           },
         "elders": {
-          "imgSrc": "img/elders.png"
+          "imgSrc": "/img/elders.png"
           },
         "languages": {
-          "imgSrc": "img/languages.png"
+          "imgSrc": "/img/languages.png"
         },
         "history": {
-          "imgSrc": "img/history.png"
+          "imgSrc": "/img/history.png"
         },
         "future": {
-          "imgSrc": "img/future.png"
+          "imgSrc": "/img/future.png"
           },
         "nations": {
-          "imgSrc": "img/nations.png"
+          "imgSrc": "/img/nations.png"
         }
     }
   }
