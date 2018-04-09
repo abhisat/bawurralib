@@ -18,15 +18,22 @@
  */
 $(document).ready(function(){
   var mainMenu;
+  var route;
   document.addEventListener("deviceready", onDeviceReady, false);
   function onDeviceReady() {
-        console.log(device.name);
-        console.log(device.platform);
+        if (device.platform=='amazon-fireos'){
+          route = "file:///android_asset/www";
+        }
+        else{
+          route = '';
+        }
+        $.getJSON(route+"/data/mainMenu.json", function(result){
+          mainMenu = result;
+        }).done(parsePage);
     }
-  $.getJSON("/data/mainMenu.json", function(result){
-    mainMenu = result;
-  })
-  .done(function(){
+
+
+  var parsePage = function(){
 
     var menuNumber = mainMenu.number;
 
@@ -40,13 +47,12 @@ $(document).ready(function(){
       if (item % 2 == 0){
         $("<div></div>").appendTo($(".menuContainer")).addClass("grid-x");
       }
-      $("<a></a>").attr("href", "/"+itemList[item]+"SubMenu.html").appendTo($(".menuContainer").children().last()).addClass("cell medium-6 large-6 small-6");
+      $("<a></a>").attr("href", route+"/"+itemList[item]+"SubMenu.html").appendTo($(".menuContainer").children().last()).addClass("cell medium-6 large-6 small-6");
       $("<center></center>").appendTo($(".menuContainer").children().last().children().last());
       $('<img />').attr({
-            'src': mainMenu.items[itemList[item]].imgSrc,
+            'src': route+mainMenu.items[itemList[item]].imgSrc,
             'alt': itemList[item] + "image logo",
         }).appendTo($(".menuContainer").children().last().children().last().find($("center")));
-      console.log(mainMenu.items[itemList[item]]);
       $("<br/>").appendTo($(".menuContainer").children().last().children().last().find($("center")));
       $("<bold></bold>").text(itemList[item]).css('text-transform', 'capitalize').
       appendTo($(".menuContainer").children().last().children().last().find($("center")));
@@ -55,5 +61,5 @@ $(document).ready(function(){
 
   $(document).foundation();
 
-  });
+  };
 });
