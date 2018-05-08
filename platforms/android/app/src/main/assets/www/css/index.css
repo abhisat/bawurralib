@@ -16,20 +16,30 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+ @import url('/fonts/Raleway/Raleway-Regular.ttf');
+
+ #mainHeader{
+   color: white;
+ }
+ .topMenu{
+   color: white !important;
+   font-weight: bold;
+   background-color: transparent !important;
+ }
 .cell{
   border: 2px solid gray;
   border-top: none;
 }
- .foundation-5-top-bar {
+ .header{
    background: #750000;
    color: #000;
  }
 
- .top-bar{
+ .header{
    background: #750000 !important;
  }
 
- .foundation-5-top-bar .menu {
+ .header {
    background: #750000;
  }
 

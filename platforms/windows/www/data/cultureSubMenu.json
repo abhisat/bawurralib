@@ -1,46 +1,46 @@
 ﻿{"number": 14,
     "items": {
         "boobera lagoon": {
-          "imgSrc": "/img/cultureMenu1.jpg"
+          "imgSrc": "img/cultureMenu1.jpg"
           },
         "the hairy man": {
-          "imgSrc": "/img/cultureMenu2.jpg"
+          "imgSrc": "img/cultureMenu2.jpg"
           },
         "the dreaming": {
-          "imgSrc": "/img/cultureMenu1.jpg"
+          "imgSrc": "img/cultureMenu1.jpg"
         },
         "nalu the fish": {
-          "imgSrc": "/img/cultureMenu2.jpg"
+          "imgSrc": "img/cultureMenu2.jpg"
         },
         "min min lights": {
-          "imgSrc": "/img/cultureMenu1.jpg"
+          "imgSrc": "img/cultureMenu1.jpg"
           },
         "the hairy man (audio)": {
-          "imgSrc": "/img/cultureMenu2.jpg"
+          "imgSrc": "img/cultureMenu2.jpg"
         },
         "how the ocean got its waves": {
-          "imgSrc": "/img/cultureMenu1.jpg"
+          "imgSrc": "img/cultureMenu1.jpg"
         },
         "how the echidna was made": {
-          "imgSrc": "/img/cultureMenu2.jpg"
+          "imgSrc": "img/cultureMenu2.jpg"
         },
         "scarred trees": {
-          "imgSrc": "/img/cultureMenu1.jpg"
+          "imgSrc": "img/cultureMenu1.jpg"
         },
         "burial traditions and walkabout": {
-          "imgSrc": "/img/cultureMenu2.jpg"
+          "imgSrc": "img/cultureMenu2.jpg"
         },
         "clan boundaries": {
-          "imgSrc": "/img/cultureMenu1.jpg"
+          "imgSrc": "img/cultureMenu1.jpg"
         },
         "dance and ceremony": {
-          "imgSrc": "/img/cultureMenu2.jpg"
+          "imgSrc": "img/cultureMenu2.jpg"
         },
         "connection to land": {
-          "imgSrc": "/img/cultureMenu1.jpg"
+          "imgSrc": "img/cultureMenu1.jpg"
         },
         "tools and technology": {
-          "imgSrc": "/img/cultureMenu2.jpg"
+          "imgSrc": "img/cultureMenu2.jpg"
         }
     }
   }

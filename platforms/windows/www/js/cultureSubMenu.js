@@ -17,24 +17,15 @@
  * under the License.
  */
 $(document).ready(function(){
-  console.log("here");
   var mainMenu;
   var disclaimer;
-  var route;
   document.addEventListener("deviceready", onDeviceReady, false);
   function onDeviceReady() {
-
-        if (device.platform=='amazon-fireos'){
-          route = "file:///android_asset/www";
-        }
-        else{
-          route = '';
-        }
-        $.getJSON(route+"/data/cultureSubMenu.json", function(result){
+        $.getJSON("data/cultureSubMenu.json", function(result){
           mainMenu = result;
         }).done(parsePage);
 
-        $.getJSON(route+"/data/disclaimer.json", function(result){
+        $.getJSON("data/disclaimer.json", function(result){
             disclaimer = result;
           })
           .done(parseDisclaimer);
@@ -46,7 +37,7 @@ $(document).ready(function(){
       'class':"backButton"
     }).appendTo($(".top-bar-left"));
     $("<a></a>").attr({
-      'href': route+"/index.html"
+      'href': "index.html"
     }).html("&#8592;").appendTo($(".backButton"))
 
     var menuNumber = mainMenu.number;
@@ -61,7 +52,7 @@ $(document).ready(function(){
       $("<div></div>").appendTo($(".menuContainer")).addClass("grid-x");
       $("<a></a>").attr('href', "#").appendTo($(".menuContainer").children().last()).addClass("cell medium-12 large-12 small-12");
       $('<img />').attr({
-            'src': route+mainMenu.items[itemList[item]].imgSrc,
+            'src': mainMenu.items[itemList[item]].imgSrc,
             'alt': itemList[item] + "image logo",
         }).appendTo($(".menuContainer").children().last().children().last());
       $("<bold></bold>").text(itemList[item]).css('text-transform', 'capitalize').

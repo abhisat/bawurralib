@@ -16,50 +16,85 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-$(document).ready(function(){
+$(document).ready(function() {
   var mainMenu;
-  var route;
+
   document.addEventListener("deviceready", onDeviceReady, false);
+
   function onDeviceReady() {
-        if (device.platform=='amazon-fireos'){
-          route = "file:///android_asset/www";
-        }
-        else{
-          route = '';
-        }
-        $.getJSON(route+"/data/mainMenu.json", function(result){
-          mainMenu = result;
-        }).done(parsePage);
+    var bawurradb = null;
+
+    $.getJSON("data/mainMenu.json", function(result) {
+      mainMenu = result;
+    }).done(parsePage);
+    if (device.platform == 'amazon-fireos') {
+      bawurradb = window.sqlitePlugin.openDatabase({
+        name: 'bawurradb.sqlite',
+        location: 'default',
+        androidDatabaseImplementation: 2
+      });
+    }
+    else if (device.platform == 'ios') {
+      bawurradb = window.sqlitePlugin.openDatabase({
+        name: 'bawurradb.sqlite',
+        iosDatabaseLocation: 'Library'
+      });
     }
 
+    bawurradb.transaction(function(tx) {
+      tx.executeSql('CREATE TABLE IF NOT EXISTS CULTURE (name, score)');
+      console.log('here')
+      tx.executeSql('INSERT INTO DemoTable VALUES (?,?)', ['Alice', 101]);
+      console.log('here')
+    });
+  }
 
-  var parsePage = function(){
+  var parsePage = function() {
 
     var menuNumber = mainMenu.number;
 
     var itemList = [];
 
-    for (var item in mainMenu.items){
+    for (var item in mainMenu.items) {
       itemList.push(item);
     }
 
-    for (var item = 0; item < menuNumber; item ++){
-      if (item % 2 == 0){
+    for (var item = 0; item < menuNumber; item++) {
+      if (item % 2 == 0) {
         $("<div></div>").appendTo($(".menuContainer")).addClass("grid-x");
       }
-      $("<a></a>").attr("href", route+"/"+itemList[item]+"SubMenu.html").appendTo($(".menuContainer").children().last()).addClass("cell medium-6 large-6 small-6");
+      $("<a></a>").attr("href", itemList[item] + "SubMenu.html", "class", "mainMenuItems").appendTo($(".menuContainer").children().last()).addClass("cell medium-6 large-6 small-6")
+      .css({
+        'color': '#4B0000',
+        'font-size': '1.5em',
+        'height': '7.4em',
+        'font-weight': '400',
+        'border': 'none'
+      }).append("<style type=\"text/css\">" +
+                                "@font-face {\n" +
+                                    "\tfont-family: \"Raleway\";\n" +
+                                    "\tsrc: local('☺'), url('../css/fonts/Raleway/Raleway-Regular.ttf');\n" +
+                                "}\n" +
+                                    "\t.mainMenuItems {\n" +
+                                    "\tfont-family: Raleway !important;\n" +
+                                "}\n" +
+                            "</style>");;
       $("<center></center>").appendTo($(".menuContainer").children().last().children().last());
       $('<img />').attr({
-            'src': route+mainMenu.items[itemList[item]].imgSrc,
-            'alt': itemList[item] + "image logo",
-        }).appendTo($(".menuContainer").children().last().children().last().find($("center")));
+        'src': mainMenu.items[itemList[item]].imgSrc,
+        'alt': itemList[item] + "image logo",
+      }).css({
+        'width': '3em',
+        'height': '3em',
+        'margin-top': '2em'
+      }).appendTo($(".menuContainer").children().last().children().last().find($("center")));
       $("<br/>").appendTo($(".menuContainer").children().last().children().last().find($("center")));
       $("<bold></bold>").text(itemList[item]).css('text-transform', 'capitalize').
       appendTo($(".menuContainer").children().last().children().last().find($("center")));
     }
 
 
-  $(document).foundation();
+    $(document).foundation();
 
   };
 });

@@ -18,9 +18,10 @@
     under the License.
 -->
 <html>
-    <head>
-      <base href="."></base>
-        <!--
+
+<head>
+  <base href="."></base>
+  <!--
         Customize this policy to fit your own app's needs. For more guidance, see:
             https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
         Some notes:
@@ -29,39 +30,48 @@
             * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
-        <meta name="format-detection" content="telephone=no">
-        <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-        <link rel="stylesheet" type="text/css" href="css/index.css">
-        <link rel="stylesheet" type="text/css" href="css/foundation.min.css">
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/jQuery.js"></script>
-        <script type="text/javascript" src="js/popper.js"></script>
-        <script type="text/javascript" src="js/foundation.min.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-        <title>Bawurra Library</title>
-    </head>
-    <body>
-      <div class="top-bar foundation-5-top-bar">
-        <div class="top-bar-title">
-          <strong>Bawurra Library</strong>
-        </div>
-        <div id="responsive-menu">
-          <div class="top-bar-left">
-            <ul class="dropdown vertical medium-horizontal menu" data-responsive-menu="drilldown medium-dropdown" data-auto-height="true" data-animate-height="true">
-              <li>
-                <a href="#">Library</a>
-              </li>
-              <li>
-                <a href="#">Bawurra Foundation</a>
-              </li>
-            </ul>
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+  <link rel="stylesheet" type="text/css" href="css/index.css">
+  <link rel="stylesheet" href="css/foundation.css">
+  <script type="text/javascript" src="cordova.js"></script>
+
+  <title>Bawurra Library</title>
+</head>
+
+<body>
+  <div class="header">
+    <div class="grid-x">
+      <strong id='mainHeader'>Bawurra Library</strong>
+    </div>
+    <div class="grix-x">
+        <ul class="tabs" data-responsive-accordion-tabs="tabs medium-accordion large-tabs" id="example-tabs">
+          <li class="tabs-title is-active"><a href="#panel1" aria-selected="true">Library</a></li>
+          <li class="tabs-title"><a href="#panel2">About Us</a></li>
+        </ul>
+
+        <div class="tabs-content" data-tabs-content="example-tabs">
+          <div class="tabs-panel is-active" id="panel1">
+            <div class="menuContainer">
+
+            </div>
+          </div>
+          <div class="tabs-panel" id="panel2">
+            <p>two</p>
+            <img class="thumbnail" src="assets/img/generic/rectangle-7.jpg">
           </div>
         </div>
       </div>
+    </div>
 
-      <div class="menuContainer">
 
-      </div>
-    </body>
+
+  <script src="js/vendor/jquery.js"></script>
+  <script src="js/vendor/what-input.js"></script>
+  <script src="js/vendor/foundation.js"></script>
+  <script type="text/javascript" src="js/popper.js"></script>
+  <script type="text/javascript" src="js/index.js"></script>
+</body>
+
 </html>
