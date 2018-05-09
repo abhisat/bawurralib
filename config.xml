@@ -28,7 +28,10 @@
     <plugin name="cordova-plugin-device" spec="^2.0.1" />
     <plugin name="cordova-sqlite-storage" spec="^2.3.1" />
     <plugin name="cordova-plugin-network-information" spec="^2.0.1" />
+    <vs:toolsetVersion xmlns:vs="http://schemas.microsoft.com/appx/2014/htmlapps">6.3.1</vs:toolsetVersion>
+    <preference name="windows-target-version" value="10.0" />
     <engine name="android" spec="^7.0.0" />
     <engine name="browser" spec="^5.0.3" />
     <engine name="windows" spec="^5.0.0" />
+    <engine name="ios" spec="4.2.0" />
 </widget>
