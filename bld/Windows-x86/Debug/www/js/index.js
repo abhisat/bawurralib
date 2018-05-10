@@ -22,12 +22,13 @@ $(document).ready(function() {
   document.addEventListener("deviceready", onDeviceReady, false);
 
   function onDeviceReady() {
-    var bawurradb = null;
+      var bawurradb = null;
+      console.log(device.platform)
 
     $.getJSON("data/mainMenu.json", function(result) {
       mainMenu = result;
     }).done(parsePage);
-    if (device.platform == 'amazon-fireos') {
+    if (device.platform == 'amazon-fireos' || device.platform == 'windows') {
       bawurradb = window.sqlitePlugin.openDatabase({
         name: 'bawurradb.sqlite',
         location: 'default',

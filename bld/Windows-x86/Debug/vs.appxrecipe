@@ -32,7 +32,7 @@
     <AppXManifest Include="C:\Users\jacks\bawurralib\platforms\windows\build\windows\debug\x86\win10\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-05-09T07:15:55.172</Modified>
+      <Modified>2018-05-10T06:53:33.249</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
@@ -117,47 +117,47 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jacks\bawurralib\platforms\windows\www\admin.html">
       <PackagePath>www\admin.html</PackagePath>
-      <Modified>2018-05-09T07:15:42.906</Modified>
+      <Modified>2018-05-10T06:53:23.359</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jacks\bawurralib\platforms\windows\www\cultureSubMenu.html">
       <PackagePath>www\cultureSubMenu.html</PackagePath>
-      <Modified>2018-05-09T07:15:43.016</Modified>
+      <Modified>2018-05-10T06:53:23.468</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jacks\bawurralib\platforms\windows\www\eldersSubMenu.html">
       <PackagePath>www\eldersSubMenu.html</PackagePath>
-      <Modified>2018-05-09T07:15:43.032</Modified>
+      <Modified>2018-05-10T06:53:23.484</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jacks\bawurralib\platforms\windows\www\futureSubMenu.html">
       <PackagePath>www\futureSubMenu.html</PackagePath>
-      <Modified>2018-05-09T07:15:43.047</Modified>
+      <Modified>2018-05-10T06:53:23.484</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jacks\bawurralib\platforms\windows\www\historySubMenu.html">
       <PackagePath>www\historySubMenu.html</PackagePath>
-      <Modified>2018-05-09T07:15:43.047</Modified>
+      <Modified>2018-05-10T06:53:23.499</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jacks\bawurralib\platforms\windows\www\index.html">
       <PackagePath>www\index.html</PackagePath>
-      <Modified>2018-05-09T07:15:50.157</Modified>
+      <Modified>2018-05-10T06:53:29.202</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jacks\bawurralib\platforms\windows\www\languagesSubMenu.html">
       <PackagePath>www\languagesSubMenu.html</PackagePath>
-      <Modified>2018-05-09T07:15:44.266</Modified>
+      <Modified>2018-05-10T06:53:24.624</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jacks\bawurralib\platforms\windows\www\nationsSubMenu.html">
       <PackagePath>www\nationsSubMenu.html</PackagePath>
-      <Modified>2018-05-09T07:15:44.282</Modified>
+      <Modified>2018-05-10T06:53:24.640</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jacks\bawurralib\platforms\windows\www\cordova-js-src\confighelper.js">
       <PackagePath>www\cordova-js-src\confighelper.js</PackagePath>
-      <Modified>2018-05-09T07:15:42.906</Modified>
+      <Modified>2018-05-10T06:53:23.359</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jacks\bawurralib\platforms\windows\www\cordova-js-src\exec.js">
       <PackagePath>www\cordova-js-src\exec.js</PackagePath>
-      <Modified>2018-05-09T07:15:42.922</Modified>
+      <Modified>2018-05-10T06:53:23.359</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jacks\bawurralib\platforms\windows\www\cordova-js-src\platform.js">
       <PackagePath>www\cordova-js-src\platform.js</PackagePath>
-      <Modified>2018-05-09T07:15:42.969</Modified>
+      <Modified>2018-05-10T06:53:23.390</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jacks\bawurralib\platforms\windows\www\cordova-js-src\splashscreen.js">
       <PackagePath>www\cordova-js-src\splashscreen.js</PackagePath>
@@ -169,191 +169,191 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jacks\bawurralib\platforms\windows\www\cordova_plugins.js">
       <PackagePath>www\cordova_plugins.js</PackagePath>
-      <Modified>2018-05-09T07:15:42.969</Modified>
+      <Modified>2018-05-10T06:53:23.405</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jacks\bawurralib\platforms\windows\www\js\app.js">
       <PackagePath>www\js\app.js</PackagePath>
-      <Modified>2018-05-09T07:15:43.078</Modified>
+      <Modified>2018-05-10T06:53:23.515</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jacks\bawurralib\platforms\windows\www\js\bootstrap.min.js">
       <PackagePath>www\js\bootstrap.min.js</PackagePath>
-      <Modified>2018-05-09T07:15:43.172</Modified>
+      <Modified>2018-05-10T06:53:23.609</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jacks\bawurralib\platforms\windows\www\js\cultureSubMenu.js">
       <PackagePath>www\js\cultureSubMenu.js</PackagePath>
-      <Modified>2018-05-09T07:15:43.172</Modified>
+      <Modified>2018-05-10T06:53:23.624</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jacks\bawurralib\platforms\windows\www\js\eldersSubMenu.js">
       <PackagePath>www\js\eldersSubMenu.js</PackagePath>
-      <Modified>2018-05-09T07:15:43.172</Modified>
+      <Modified>2018-05-10T06:53:23.624</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jacks\bawurralib\platforms\windows\www\js\foundation.min.js">
       <PackagePath>www\js\foundation.min.js</PackagePath>
-      <Modified>2018-05-09T07:15:43.328</Modified>
+      <Modified>2018-05-10T06:53:23.780</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jacks\bawurralib\platforms\windows\www\js\futureSubMenu.js">
       <PackagePath>www\js\futureSubMenu.js</PackagePath>
-      <Modified>2018-05-09T07:15:43.328</Modified>
+      <Modified>2018-05-10T06:53:23.780</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jacks\bawurralib\platforms\windows\www\js\historySubMenu.js">
       <PackagePath>www\js\historySubMenu.js</PackagePath>
-      <Modified>2018-05-09T07:15:43.328</Modified>
+      <Modified>2018-05-10T06:53:23.780</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jacks\bawurralib\platforms\windows\www\js\index.js">
       <PackagePath>www\js\index.js</PackagePath>
-      <Modified>2018-05-09T07:15:43.328</Modified>
+      <Modified>2018-05-10T06:53:23.780</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jacks\bawurralib\platforms\windows\www\js\jQuery.js">
       <PackagePath>www\js\jQuery.js</PackagePath>
-      <Modified>2018-05-09T07:15:43.532</Modified>
+      <Modified>2018-05-10T06:53:23.952</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jacks\bawurralib\platforms\windows\www\js\languagesSubMenu.js">
       <PackagePath>www\js\languagesSubMenu.js</PackagePath>
-      <Modified>2018-05-09T07:15:43.532</Modified>
+      <Modified>2018-05-10T06:53:23.952</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jacks\bawurralib\platforms\windows\www\js\nationsSubMenu.js">
       <PackagePath>www\js\nationsSubMenu.js</PackagePath>
-      <Modified>2018-05-09T07:15:43.532</Modified>
+      <Modified>2018-05-10T06:53:23.952</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jacks\bawurralib\platforms\windows\www\js\popper.js">
       <PackagePath>www\js\popper.js</PackagePath>
-      <Modified>2018-05-09T07:15:43.594</Modified>
+      <Modified>2018-05-10T06:53:23.999</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jacks\bawurralib\platforms\windows\www\js\vendor\foundation.js">
       <PackagePath>www\js\vendor\foundation.js</PackagePath>
-      <Modified>2018-05-09T07:15:43.782</Modified>
+      <Modified>2018-05-10T06:53:24.218</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jacks\bawurralib\platforms\windows\www\js\vendor\foundation.min.js">
       <PackagePath>www\js\vendor\foundation.min.js</PackagePath>
-      <Modified>2018-05-09T07:15:43.985</Modified>
+      <Modified>2018-05-10T06:53:24.374</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jacks\bawurralib\platforms\windows\www\js\vendor\jquery.js">
       <PackagePath>www\js\vendor\jquery.js</PackagePath>
-      <Modified>2018-05-09T07:15:44.141</Modified>
+      <Modified>2018-05-10T06:53:24.546</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jacks\bawurralib\platforms\windows\www\js\vendor\what-input.js">
       <PackagePath>www\js\vendor\what-input.js</PackagePath>
-      <Modified>2018-05-09T07:15:44.188</Modified>
+      <Modified>2018-05-10T06:53:24.593</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jacks\bawurralib\platforms\windows\www\js\what-input.js">
       <PackagePath>www\js\what-input.js</PackagePath>
-      <Modified>2018-05-09T07:15:44.266</Modified>
+      <Modified>2018-05-10T06:53:24.624</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jacks\bawurralib\platforms\windows\www\plugins\cordova-plugin-device\src\windows\DeviceProxy.js">
       <PackagePath>www\plugins\cordova-plugin-device\src\windows\DeviceProxy.js</PackagePath>
-      <Modified>2018-05-09T07:15:44.282</Modified>
+      <Modified>2018-05-10T06:53:24.640</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jacks\bawurralib\platforms\windows\www\plugins\cordova-plugin-device\www\device.js">
       <PackagePath>www\plugins\cordova-plugin-device\www\device.js</PackagePath>
-      <Modified>2018-05-09T07:15:44.297</Modified>
+      <Modified>2018-05-10T06:53:24.640</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jacks\bawurralib\platforms\windows\www\plugins\cordova-plugin-file\src\windows\FileProxy.js">
       <PackagePath>www\plugins\cordova-plugin-file\src\windows\FileProxy.js</PackagePath>
-      <Modified>2018-05-09T07:15:44.407</Modified>
+      <Modified>2018-05-10T06:53:24.702</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jacks\bawurralib\platforms\windows\www\plugins\cordova-plugin-file\www\browser\isChrome.js">
       <PackagePath>www\plugins\cordova-plugin-file\www\browser\isChrome.js</PackagePath>
-      <Modified>2018-05-09T07:15:44.407</Modified>
+      <Modified>2018-05-10T06:53:24.702</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jacks\bawurralib\platforms\windows\www\plugins\cordova-plugin-file\www\DirectoryEntry.js">
       <PackagePath>www\plugins\cordova-plugin-file\www\DirectoryEntry.js</PackagePath>
-      <Modified>2018-05-09T07:15:44.422</Modified>
+      <Modified>2018-05-10T06:53:24.702</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jacks\bawurralib\platforms\windows\www\plugins\cordova-plugin-file\www\DirectoryReader.js">
       <PackagePath>www\plugins\cordova-plugin-file\www\DirectoryReader.js</PackagePath>
-      <Modified>2018-05-09T07:15:44.422</Modified>
+      <Modified>2018-05-10T06:53:24.718</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jacks\bawurralib\platforms\windows\www\plugins\cordova-plugin-file\www\Entry.js">
       <PackagePath>www\plugins\cordova-plugin-file\www\Entry.js</PackagePath>
-      <Modified>2018-05-09T07:15:44.469</Modified>
+      <Modified>2018-05-10T06:53:24.765</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jacks\bawurralib\platforms\windows\www\plugins\cordova-plugin-file\www\File.js">
       <PackagePath>www\plugins\cordova-plugin-file\www\File.js</PackagePath>
-      <Modified>2018-05-09T07:15:44.469</Modified>
+      <Modified>2018-05-10T06:53:24.765</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jacks\bawurralib\platforms\windows\www\plugins\cordova-plugin-file\www\FileEntry.js">
       <PackagePath>www\plugins\cordova-plugin-file\www\FileEntry.js</PackagePath>
-      <Modified>2018-05-09T07:15:44.469</Modified>
+      <Modified>2018-05-10T06:53:24.765</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jacks\bawurralib\platforms\windows\www\plugins\cordova-plugin-file\www\FileError.js">
       <PackagePath>www\plugins\cordova-plugin-file\www\FileError.js</PackagePath>
-      <Modified>2018-05-09T07:15:44.485</Modified>
+      <Modified>2018-05-10T06:53:24.765</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jacks\bawurralib\platforms\windows\www\plugins\cordova-plugin-file\www\FileReader.js">
       <PackagePath>www\plugins\cordova-plugin-file\www\FileReader.js</PackagePath>
-      <Modified>2018-05-09T07:15:44.578</Modified>
+      <Modified>2018-05-10T06:53:24.812</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jacks\bawurralib\platforms\windows\www\plugins\cordova-plugin-file\www\FileSystem.js">
       <PackagePath>www\plugins\cordova-plugin-file\www\FileSystem.js</PackagePath>
-      <Modified>2018-05-09T07:15:44.578</Modified>
+      <Modified>2018-05-10T06:53:24.812</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jacks\bawurralib\platforms\windows\www\plugins\cordova-plugin-file\www\fileSystemPaths.js">
       <PackagePath>www\plugins\cordova-plugin-file\www\fileSystemPaths.js</PackagePath>
-      <Modified>2018-05-09T07:15:44.578</Modified>
+      <Modified>2018-05-10T06:53:24.812</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jacks\bawurralib\platforms\windows\www\plugins\cordova-plugin-file\www\fileSystems.js">
       <PackagePath>www\plugins\cordova-plugin-file\www\fileSystems.js</PackagePath>
-      <Modified>2018-05-09T07:15:44.594</Modified>
+      <Modified>2018-05-10T06:53:24.827</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jacks\bawurralib\platforms\windows\www\plugins\cordova-plugin-file\www\FileUploadOptions.js">
       <PackagePath>www\plugins\cordova-plugin-file\www\FileUploadOptions.js</PackagePath>
-      <Modified>2018-05-09T07:15:44.610</Modified>
+      <Modified>2018-05-10T06:53:24.843</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jacks\bawurralib\platforms\windows\www\plugins\cordova-plugin-file\www\FileUploadResult.js">
       <PackagePath>www\plugins\cordova-plugin-file\www\FileUploadResult.js</PackagePath>
-      <Modified>2018-05-09T07:15:44.610</Modified>
+      <Modified>2018-05-10T06:53:24.843</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jacks\bawurralib\platforms\windows\www\plugins\cordova-plugin-file\www\FileWriter.js">
       <PackagePath>www\plugins\cordova-plugin-file\www\FileWriter.js</PackagePath>
-      <Modified>2018-05-09T07:15:44.657</Modified>
+      <Modified>2018-05-10T06:53:24.874</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jacks\bawurralib\platforms\windows\www\plugins\cordova-plugin-file\www\Flags.js">
       <PackagePath>www\plugins\cordova-plugin-file\www\Flags.js</PackagePath>
-      <Modified>2018-05-09T07:15:44.657</Modified>
+      <Modified>2018-05-10T06:53:24.874</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jacks\bawurralib\platforms\windows\www\plugins\cordova-plugin-file\www\LocalFileSystem.js">
       <PackagePath>www\plugins\cordova-plugin-file\www\LocalFileSystem.js</PackagePath>
-      <Modified>2018-05-09T07:15:44.657</Modified>
+      <Modified>2018-05-10T06:53:24.890</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jacks\bawurralib\platforms\windows\www\plugins\cordova-plugin-file\www\Metadata.js">
       <PackagePath>www\plugins\cordova-plugin-file\www\Metadata.js</PackagePath>
-      <Modified>2018-05-09T07:15:44.672</Modified>
+      <Modified>2018-05-10T06:53:24.890</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jacks\bawurralib\platforms\windows\www\plugins\cordova-plugin-file\www\ProgressEvent.js">
       <PackagePath>www\plugins\cordova-plugin-file\www\ProgressEvent.js</PackagePath>
-      <Modified>2018-05-09T07:15:44.672</Modified>
+      <Modified>2018-05-10T06:53:24.890</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jacks\bawurralib\platforms\windows\www\plugins\cordova-plugin-file\www\requestFileSystem.js">
       <PackagePath>www\plugins\cordova-plugin-file\www\requestFileSystem.js</PackagePath>
-      <Modified>2018-05-09T07:15:44.672</Modified>
+      <Modified>2018-05-10T06:53:24.890</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jacks\bawurralib\platforms\windows\www\plugins\cordova-plugin-file\www\resolveLocalFileSystemURI.js">
       <PackagePath>www\plugins\cordova-plugin-file\www\resolveLocalFileSystemURI.js</PackagePath>
-      <Modified>2018-05-09T07:15:44.672</Modified>
+      <Modified>2018-05-10T06:53:24.890</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jacks\bawurralib\platforms\windows\www\plugins\cordova-plugin-network-information\src\windows\NetworkInfoProxy.js">
       <PackagePath>www\plugins\cordova-plugin-network-information\src\windows\NetworkInfoProxy.js</PackagePath>
-      <Modified>2018-05-09T07:15:44.688</Modified>
+      <Modified>2018-05-10T06:53:24.905</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jacks\bawurralib\platforms\windows\www\plugins\cordova-plugin-network-information\www\Connection.js">
       <PackagePath>www\plugins\cordova-plugin-network-information\www\Connection.js</PackagePath>
-      <Modified>2018-05-09T07:15:44.703</Modified>
+      <Modified>2018-05-10T06:53:24.905</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jacks\bawurralib\platforms\windows\www\plugins\cordova-plugin-network-information\www\network.js">
       <PackagePath>www\plugins\cordova-plugin-network-information\www\network.js</PackagePath>
-      <Modified>2018-05-09T07:15:44.703</Modified>
+      <Modified>2018-05-10T06:53:24.905</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jacks\bawurralib\platforms\windows\www\plugins\cordova-sqlite-storage\src\windows\sqlite-proxy.js">
       <PackagePath>www\plugins\cordova-sqlite-storage\src\windows\sqlite-proxy.js</PackagePath>
-      <Modified>2018-05-09T07:15:44.735</Modified>
+      <Modified>2018-05-10T06:53:24.905</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jacks\bawurralib\platforms\windows\www\plugins\cordova-sqlite-storage\src\windows\SQLite3-Win-RT\SQLite3JS\js\SQLite3.js">
       <PackagePath>www\plugins\cordova-sqlite-storage\src\windows\SQLite3-Win-RT\SQLite3JS\js\SQLite3.js</PackagePath>
-      <Modified>2018-05-09T07:15:44.782</Modified>
+      <Modified>2018-05-10T06:53:24.952</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jacks\bawurralib\platforms\windows\www\plugins\cordova-sqlite-storage\www\SQLitePlugin.js">
       <PackagePath>www\plugins\cordova-sqlite-storage\www\SQLitePlugin.js</PackagePath>
-      <Modified>2018-05-09T07:15:44.828</Modified>
+      <Modified>2018-05-10T06:53:25.015</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jacks\bawurralib\platforms\windows\www\WinJS\js\base.js">
       <PackagePath>www\WinJS\js\base.js</PackagePath>
@@ -369,23 +369,23 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jacks\bawurralib\platforms\windows\www\css\app.css">
       <PackagePath>www\css\app.css</PackagePath>
-      <Modified>2018-05-09T07:15:42.969</Modified>
+      <Modified>2018-05-10T06:53:23.405</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jacks\bawurralib\platforms\windows\www\css\bootstrap.min.css">
       <PackagePath>www\css\bootstrap.min.css</PackagePath>
-      <Modified>2018-05-09T07:15:42.985</Modified>
+      <Modified>2018-05-10T06:53:23.405</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jacks\bawurralib\platforms\windows\www\css\foundation.css">
       <PackagePath>www\css\foundation.css</PackagePath>
-      <Modified>2018-05-09T07:15:43.000</Modified>
+      <Modified>2018-05-10T06:53:23.421</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jacks\bawurralib\platforms\windows\www\css\foundation.min.css">
       <PackagePath>www\css\foundation.min.css</PackagePath>
-      <Modified>2018-05-09T07:15:43.016</Modified>
+      <Modified>2018-05-10T06:53:23.437</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jacks\bawurralib\platforms\windows\www\css\index.css">
       <PackagePath>www\css\index.css</PackagePath>
-      <Modified>2018-05-09T07:15:43.016</Modified>
+      <Modified>2018-05-10T06:53:23.452</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jacks\bawurralib\platforms\windows\www\css\splashscreen.css">
       <PackagePath>www\css\splashscreen.css</PackagePath>
@@ -393,7 +393,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jacks\bawurralib\platforms\windows\www\css\subMenu.css">
       <PackagePath>www\css\subMenu.css</PackagePath>
-      <Modified>2018-05-09T07:15:43.016</Modified>
+      <Modified>2018-05-10T06:53:23.452</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jacks\bawurralib\platforms\windows\www\css\bootstrap.min.css.map">
       <PackagePath>www\css\bootstrap.min.css.map</PackagePath>
@@ -481,19 +481,19 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jacks\bawurralib\platforms\windows\www\data\cultureSubMenu.json">
       <PackagePath>www\data\cultureSubMenu.json</PackagePath>
-      <Modified>2018-05-09T07:15:43.016</Modified>
+      <Modified>2018-05-10T06:53:23.484</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jacks\bawurralib\platforms\windows\www\data\disclaimer.json">
       <PackagePath>www\data\disclaimer.json</PackagePath>
-      <Modified>2018-05-09T07:15:43.032</Modified>
+      <Modified>2018-05-10T06:53:23.484</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jacks\bawurralib\platforms\windows\www\data\eldersSubMenu.json">
       <PackagePath>www\data\eldersSubMenu.json</PackagePath>
-      <Modified>2018-05-09T07:15:43.032</Modified>
+      <Modified>2018-05-10T06:53:23.484</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jacks\bawurralib\platforms\windows\www\data\mainMenu.json">
       <PackagePath>www\data\mainMenu.json</PackagePath>
-      <Modified>2018-05-09T07:15:43.032</Modified>
+      <Modified>2018-05-10T06:53:23.484</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jacks\bawurralib\platforms\windows\www\img\cultureMenu1.jpg">
       <PackagePath>www\img\cultureMenu1.jpg</PackagePath>
@@ -505,7 +505,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jacks\bawurralib\platforms\windows\config.xml">
       <PackagePath>config.xml</PackagePath>
-      <Modified>2018-05-09T07:15:41.656</Modified>
+      <Modified>2018-05-10T06:53:22.124</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.UniversalCRT.Debug\10.0.16299.0\\redist\Debug\x86\ucrtbased.dll">
       <PackagePath>ucrtbased.dll</PackagePath>
@@ -514,7 +514,7 @@
     <AppxPackagedFile Include="C:\Users\jacks\bawurralib\platforms\windows\build\windows\debug\x86\win10\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-05-09T07:15:53.047</Modified>
+      <Modified>2018-05-10T06:53:30.952</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
