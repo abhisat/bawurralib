@@ -19,11 +19,24 @@
 $(document).ready(function() {
   var mainMenu;
 
+  document.addEventListener("online", online, false);
+  document.addEventListener("offline", offline, false);
   document.addEventListener("deviceready", onDeviceReady, false);
 
-  function onDeviceReady() {
+  var online = function(){
+    console.log("here");
+    $.get("localhost:3000/serveJson", function(result) {
+      console.log(result);
+      console.log("here");
+    });
+  }
+
+  var offline = function(){
+    console.log("offline");
+  }
+
+  var onDeviceReady = function() {
       var bawurradb = null;
-      console.log(device.platform)
 
     $.getJSON("data/mainMenu.json", function(result) {
       mainMenu = result;
@@ -44,9 +57,7 @@ $(document).ready(function() {
 
     bawurradb.transaction(function(tx) {
       tx.executeSql('CREATE TABLE IF NOT EXISTS CULTURE (name, score)');
-      console.log('here')
       tx.executeSql('INSERT INTO DemoTable VALUES (?,?)', ['Alice', 101]);
-      console.log('here')
     });
   }
 
