@@ -12,12 +12,12 @@
         "source": "/Users/abhisheksatpathy/Bawurra/TestCordovaApp/BawurraLibrary/platforms/android/app/src/main/res/drawable-port-hdpi/screen.png"
     },
     {
-        "merged": "/Users/abhisheksatpathy/Bawurra/TestCordovaApp/BawurraTest/platforms/android/app/build/intermediates/res/merged/debug/drawable-port-hdpi_screen.png.flat",
-        "source": "/Users/abhisheksatpathy/Bawurra/TestCordovaApp/BawurraTest/platforms/android/app/src/main/res/drawable-port-hdpi/screen.png"
-    },
-    {
         "merged": "/Users/abhisheksatpathy/Bawurra/TestCordovaApp/BawurraTest/platforms/android/app/build/intermediates/res/merged/debug/drawable-port-mdpi_screen.png.flat",
         "source": "/Users/abhisheksatpathy/Bawurra/TestCordovaApp/BawurraTest/platforms/android/app/src/main/res/drawable-port-mdpi/screen.png"
+    },
+    {
+        "merged": "/Users/abhisheksatpathy/Bawurra/TestCordovaApp/BawurraTest/platforms/android/app/build/intermediates/res/merged/debug/drawable-port-hdpi_screen.png.flat",
+        "source": "/Users/abhisheksatpathy/Bawurra/TestCordovaApp/BawurraTest/platforms/android/app/src/main/res/drawable-port-hdpi/screen.png"
     },
     {
         "merged": "/Users/abhisheksatpathy/Bawurra/TestCordovaApp/BawurraLibrary/platforms/android/app/build/intermediates/res/merged/debug/drawable-port-mdpi_screen.png.flat",
@@ -52,12 +52,12 @@
         "source": "/Users/abhisheksatpathy/Bawurra/TestCordovaApp/BawurraTest/platforms/android/app/src/main/res/drawable-port-xxxhdpi/screen.png"
     },
     {
-        "merged": "/Users/abhisheksatpathy/Bawurra/TestCordovaApp/BawurraTest/platforms/android/app/build/intermediates/res/merged/debug/drawable-land-mdpi_screen.png.flat",
-        "source": "/Users/abhisheksatpathy/Bawurra/TestCordovaApp/BawurraTest/platforms/android/app/src/main/res/drawable-land-mdpi/screen.png"
-    },
-    {
         "merged": "/Users/abhisheksatpathy/Bawurra/TestCordovaApp/BawurraTest/platforms/android/app/build/intermediates/res/merged/debug/mipmap-mdpi_icon.png.flat",
         "source": "/Users/abhisheksatpathy/Bawurra/TestCordovaApp/BawurraTest/platforms/android/app/src/main/res/mipmap-mdpi/icon.png"
+    },
+    {
+        "merged": "/Users/abhisheksatpathy/Bawurra/TestCordovaApp/BawurraTest/platforms/android/app/build/intermediates/res/merged/debug/drawable-land-mdpi_screen.png.flat",
+        "source": "/Users/abhisheksatpathy/Bawurra/TestCordovaApp/BawurraTest/platforms/android/app/src/main/res/drawable-land-mdpi/screen.png"
     },
     {
         "merged": "/Users/abhisheksatpathy/Bawurra/TestCordovaApp/BawurraLibrary/platforms/android/app/build/intermediates/res/merged/debug/drawable-land-xxxhdpi_screen.png.flat",

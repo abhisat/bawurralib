@@ -23,19 +23,22 @@ $(document).ready(function() {
   document.addEventListener("offline", offline, false);
   document.addEventListener("deviceready", onDeviceReady, false);
 
-  var online = function(){
-    console.log("here");
-    $.get("localhost:3000/serveJson", function(result) {
-      console.log(result);
-      console.log("here");
-    });
+
+  function online(){
+    $.ajax({
+        dataType: 'jsonp',
+        crossDomain: true,
+        url: "http://bawurralibrary.appspot.com/serveJson"
+    }).then(function(data){
+      console.log(data);
+      console.log('here');
+    })
   }
 
-  var offline = function(){
-    console.log("offline");
+  function offline(){
   }
 
-  var onDeviceReady = function() {
+  function onDeviceReady() {
       var bawurradb = null;
 
     $.getJSON("data/mainMenu.json", function(result) {

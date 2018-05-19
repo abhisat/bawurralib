@@ -1,4 +1,4 @@
-#Tue May 08 16:44:47 AEST 2018
+#Wed May 16 15:25:50 AEST 2018
 base.0=/Users/abhisheksatpathy/Bawurra/TestCordovaApp/BawurraLibrary/platforms/android/app/build/intermediates/transforms/dexMerger/debug/0
 renamed.0=classes.dex
 file.0=/Users/abhisheksatpathy/Bawurra/TestCordovaApp/BawurraLibrary/platforms/android/app/build/intermediates/transforms/dexMerger/debug/0/classes.dex

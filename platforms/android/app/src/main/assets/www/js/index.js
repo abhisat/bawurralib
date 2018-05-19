@@ -19,15 +19,31 @@
 $(document).ready(function() {
   var mainMenu;
 
+  document.addEventListener("online", online, false);
+  document.addEventListener("offline", offline, false);
   document.addEventListener("deviceready", onDeviceReady, false);
 
+
+  function online(){
+    console.log("here");
+    $.ajax({
+        url: "http://localhost:3000/serveJson"
+    }).then(function(data){
+      console.log(data)
+    })
+  }
+
+  function offline(){
+    console.log("offline");
+  }
+
   function onDeviceReady() {
-    var bawurradb = null;
+      var bawurradb = null;
 
     $.getJSON("data/mainMenu.json", function(result) {
       mainMenu = result;
     }).done(parsePage);
-    if (device.platform == 'amazon-fireos') {
+    if (device.platform == 'amazon-fireos' || device.platform == 'windows') {
       bawurradb = window.sqlitePlugin.openDatabase({
         name: 'bawurradb.sqlite',
         location: 'default',
@@ -43,9 +59,7 @@ $(document).ready(function() {
 
     bawurradb.transaction(function(tx) {
       tx.executeSql('CREATE TABLE IF NOT EXISTS CULTURE (name, score)');
-      console.log('here')
       tx.executeSql('INSERT INTO DemoTable VALUES (?,?)', ['Alice', 101]);
-      console.log('here')
     });
   }
 
