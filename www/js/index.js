@@ -25,13 +25,28 @@ $(document).ready(function() {
 
 
   function online(){
-    $.ajax({
-        dataType: 'jsonp',
-        crossDomain: true,
-        url: "http://bawurralibrary.appspot.com/serveJson"
-    }).then(function(data){
+    $.getJSON("http://bawurralibrary.appspot.com/serveJson", function(data){
+      console.log("here");
       console.log(data);
-      console.log('here');
+
+      if (device.platform == 'amazon-fireos' || device.platform == 'windows') {
+        bawurradb = window.sqlitePlugin.openDatabase({
+          name: 'bawurradb.sqlite',
+          location: 'default',
+          androidDatabaseImplementation: 2
+        });
+      }
+      else if (device.platform == 'ios') {
+        bawurradb = window.sqlitePlugin.openDatabase({
+          name: 'bawurradb.sqlite',
+          iosDatabaseLocation: 'Library'
+        });
+      }
+
+      bawurradb.transaction(function(tx) {
+        tx.executeSql('CREATE TABLE IF NOT EXISTS CULTURE (name, score)');
+        tx.executeSql('INSERT INTO DemoTable VALUES (?,?)', ['Alice', 101]);
+      });
     })
   }
 
@@ -44,7 +59,7 @@ $(document).ready(function() {
     $.getJSON("data/mainMenu.json", function(result) {
       mainMenu = result;
     }).done(parsePage);
-    if (device.platform == 'amazon-fireos' || device.platform == 'windows') {
+    if (device.platform == 'amazon-fireos' || device.platform == 'windows' || device.platform == 'browser') {
       bawurradb = window.sqlitePlugin.openDatabase({
         name: 'bawurradb.sqlite',
         location: 'default',

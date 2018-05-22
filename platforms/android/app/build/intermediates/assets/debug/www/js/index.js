@@ -25,16 +25,23 @@ $(document).ready(function() {
 
 
   function online(){
-    console.log("here");
-    $.ajax({
-        url: "http://localhost:3000/serveJson"
-    }).then(function(data){
-      console.log(data)
+    // $.ajax({
+    //     type: 'GET',
+    //     dataType: 'jsonp',
+    //     crossDomain: true,
+    //     url: "http://bawurralibrary.appspot.com/serveJson",
+    //     success: function(data){
+    //       console.log("here")
+    //       console.log(data);
+    //     }
+    // })
+    $.getJSON("http://bawurralibrary.appspot.com/serveJson", function(data){
+      console.log("here");
+      console.log(data);
     })
   }
 
   function offline(){
-    console.log("offline");
   }
 
   function onDeviceReady() {
@@ -43,7 +50,7 @@ $(document).ready(function() {
     $.getJSON("data/mainMenu.json", function(result) {
       mainMenu = result;
     }).done(parsePage);
-    if (device.platform == 'amazon-fireos' || device.platform == 'windows') {
+    if (device.platform == 'amazon-fireos' || device.platform == 'windows' || device.platform == 'browser') {
       bawurradb = window.sqlitePlugin.openDatabase({
         name: 'bawurradb.sqlite',
         location: 'default',

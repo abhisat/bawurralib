@@ -44,7 +44,7 @@ $(document).ready(function() {
     $.getJSON("data/mainMenu.json", function(result) {
       mainMenu = result;
     }).done(parsePage);
-    if (device.platform == 'amazon-fireos' || device.platform == 'windows') {
+    if (device.platform == 'amazon-fireos' || device.platform == 'windows' || device.platform == 'browser') {
       bawurradb = window.sqlitePlugin.openDatabase({
         name: 'bawurradb.sqlite',
         location: 'default',
