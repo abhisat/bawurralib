@@ -16,10 +16,13 @@
     "cordova-plugin-device": {
       "PACKAGE_NAME": "BawurraLibraryTest"
     },
+    "cordova-plugin-network-information": {
+      "PACKAGE_NAME": "BawurraLibraryTest"
+    },
     "cordova-sqlite-storage": {
       "PACKAGE_NAME": "BawurraLibraryTest"
     },
-    "cordova-plugin-network-information": {
+    "cordova-plugin-file-transfer": {
       "PACKAGE_NAME": "BawurraLibraryTest"
     }
   },

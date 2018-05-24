@@ -16,7 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
- @import url('/fonts/Raleway/Raleway-Regular.ttf');
+ @import url('./fonts/Raleway/Raleway-Regular.ttf');
 
  #mainHeader{
    color: white;

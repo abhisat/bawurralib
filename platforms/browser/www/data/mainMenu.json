@@ -1,4 +1,4 @@
-{"number": 6,
+{"number": 10,
     "items": {
         "culture": {
           "imgSrc": "img/culture.png"
@@ -16,6 +16,18 @@
           "imgSrc": "img/future.png"
           },
         "nations": {
+          "imgSrc": "img/nations.png"
+        },
+        "social and Emotional Wellbeing": {
+          "imgSrc": "img/nations.png"
+        },
+        "arts": {
+          "imgSrc": "img/nations.png"
+        },
+        "dreaming": {
+          "imgSrc": "img/nations.png"
+        },
+        "spoken": {
           "imgSrc": "img/nations.png"
         }
     }

@@ -16,10 +16,13 @@
     "cordova-plugin-device": {
       "PACKAGE_NAME": "org.bawurra.testapp"
     },
+    "cordova-plugin-network-information": {
+      "PACKAGE_NAME": "org.bawurra.testapp"
+    },
     "cordova-sqlite-storage": {
       "PACKAGE_NAME": "org.bawurra.testapp"
     },
-    "cordova-plugin-network-information": {
+    "cordova-plugin-file-transfer": {
       "PACKAGE_NAME": "org.bawurra.testapp"
     }
   },

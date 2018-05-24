@@ -18,20 +18,21 @@
  */
 $(document).ready(function() {
   var mainMenu;
+  var temp_data;
 
   document.addEventListener("online", online, false);
   document.addEventListener("offline", offline, false);
-  document.addEventListener("deviceready", onDeviceReady, false);
 
 
   function online(){
-    $.getJSON("http://bawurralibrary.appspot.com/serveJson", function(data){
-      console.log("here");
-      console.log(data);
-
+    document.addEventListener("deviceready", database, false);
+  }
+  function database(){
+    var bawurradb = null;
+    var backenddata = null;
       if (device.platform == 'amazon-fireos' || device.platform == 'windows') {
         bawurradb = window.sqlitePlugin.openDatabase({
-          name: 'bawurradb.sqlite',
+          name: 'bawurradb',
           location: 'default',
           androidDatabaseImplementation: 2
         });
@@ -42,44 +43,48 @@ $(document).ready(function() {
           iosDatabaseLocation: 'Library'
         });
       }
+      $.getJSON("http://bawurralibrary.appspot.com/serveculture").done( function(data){
+        st_data = JSON.stringify(data);
 
-      bawurradb.transaction(function(tx) {
-        tx.executeSql('CREATE TABLE IF NOT EXISTS CULTURE (name, score)');
-        tx.executeSql('INSERT INTO DemoTable VALUES (?,?)', ['Alice', 101]);
+        bawurradb.transaction(function (tx){
+          tx.executeSql('DROP TABLE CULTURE;');
+          tx.executeSql('CREATE TABLE IF NOT EXISTS CULTURE (data);', [], function(rs) {
+          console.log("DATABASE CREATED");
+        }, function(error) {
+          console.log('SELECT SQL statement ERROR: ' + error.message);
+        });
+        tx.executeSql('INSERT INTO CULTURE(data) VALUES (?)', [st_data], function(rs, dat) {
+          console.log("INSERTED");
+        }, function(error) {
+          console.log('SELECT SQL statement ERROR: ' + error.message);
+        });
+        tx.executeSql('SELECT * FROM CULTURE;', [], function(tr, dt) {
+          backenddata = dt.rows.item(0).data;
+          console.log(backenddata);
+
+        }, function(error) {
+          console.log('SELECT SQL statement ERROR: ' + error.message);
+        });
+
       });
-    })
-  }
+  });
+  onDeviceReady();
+
+}
 
   function offline(){
+    document.addEventListener("deviceready", onDeviceReady, false);
   }
 
   function onDeviceReady() {
-      var bawurradb = null;
 
     $.getJSON("data/mainMenu.json", function(result) {
       mainMenu = result;
     }).done(parsePage);
-    if (device.platform == 'amazon-fireos' || device.platform == 'windows' || device.platform == 'browser') {
-      bawurradb = window.sqlitePlugin.openDatabase({
-        name: 'bawurradb.sqlite',
-        location: 'default',
-        androidDatabaseImplementation: 2
-      });
-    }
-    else if (device.platform == 'ios') {
-      bawurradb = window.sqlitePlugin.openDatabase({
-        name: 'bawurradb.sqlite',
-        iosDatabaseLocation: 'Library'
-      });
-    }
-
-    bawurradb.transaction(function(tx) {
-      tx.executeSql('CREATE TABLE IF NOT EXISTS CULTURE (name, score)');
-      tx.executeSql('INSERT INTO DemoTable VALUES (?,?)', ['Alice', 101]);
-    });
   }
 
-  var parsePage = function() {
+
+var parsePage = function() {
 
     var menuNumber = mainMenu.number;
 

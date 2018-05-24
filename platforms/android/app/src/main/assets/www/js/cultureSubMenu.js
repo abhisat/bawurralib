@@ -20,10 +20,32 @@ $(document).ready(function(){
   var mainMenu;
   var disclaimer;
   document.addEventListener("deviceready", onDeviceReady, false);
+
   function onDeviceReady() {
-        $.getJSON("data/cultureSubMenu.json", function(result){
-          mainMenu = result;
-        }).done(parsePage);
+      var bawurradb = null;
+      var backenddata = null;
+        if (device.platform == 'amazon-fireos' || device.platform == 'windows') {
+          bawurradb = window.sqlitePlugin.openDatabase({
+            name: 'bawurradb',
+            location: 'default',
+            androidDatabaseImplementation: 2
+          });
+        }
+        else if (device.platform == 'ios') {
+          bawurradb = window.sqlitePlugin.openDatabase({
+            name: 'bawurradb.sqlite',
+            iosDatabaseLocation: 'Library'
+          });
+        }
+      bawurradb.transaction(function(tx){
+        tx.executeSql('SELECT * FROM CULTURE;', [], function(tr, dt) {
+          backenddata = dt.rows.item(0).data;
+          parsePage(backenddata)
+
+        }, function(error) {
+          console.log('SELECT SQL statement ERROR: ' + error.message);
+        })
+      });
 
         $.getJSON("data/disclaimer.json", function(result){
             disclaimer = result;
@@ -31,31 +53,28 @@ $(document).ready(function(){
           .done(parseDisclaimer);
     }
 
-    var parsePage = function(){
+    var parsePage = function(data){
+      data_parsed = JSON.parse(data);
+
     $("<button></button>").attr({
       'type':"button",
       'class':"backButton"
     }).appendTo($(".top-bar-left"));
+
     $("<a></a>").attr({
       'href': "index.html"
-    }).html("&#8592;").appendTo($(".backButton"))
+    }).html("&#8592;").appendTo($(".backButton"));
 
-    var menuNumber = mainMenu.number;
 
-    var itemList = [];
+    for (var item = 0; item < data_parsed.length; item ++){
 
-    for (var item in mainMenu.items){
-      itemList.push(item);
-    }
-
-    for (var item = 0; item < menuNumber; item ++){
       $("<div></div>").appendTo($(".menuContainer")).addClass("grid-x");
       $("<a></a>").attr('href', "#").appendTo($(".menuContainer").children().last()).addClass("cell medium-12 large-12 small-12");
       $('<img />').attr({
-            'src': mainMenu.items[itemList[item]].imgSrc,
-            'alt': itemList[item] + "image logo",
+            'src': data_parsed[item].media_1,
+            'alt': data_parsed[item].title + "image logo",
         }).appendTo($(".menuContainer").children().last().children().last());
-      $("<bold></bold>").text(itemList[item]).css('text-transform', 'capitalize').
+      $("<bold></bold>").text(data_parsed[item].title).css('text-transform', 'capitalize').
       appendTo($(".menuContainer").children().last().children().last());
     }
   }

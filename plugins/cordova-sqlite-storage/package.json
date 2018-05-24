@@ -22,7 +22,7 @@
   "_resolved": "https://registry.npmjs.org/cordova-sqlite-storage/-/cordova-sqlite-storage-2.3.1.tgz",
   "_shasum": "392763df8a4b4534f90a3a4be01a63d191ba930c",
   "_spec": "cordova-sqlite-storage",
-  "_where": "/Users/abhisheksatpathy/Bawurra/TestCordovaApp/BawurraLibrary",
+  "_where": "/Users/abs/Bawurra/bawurralib",
   "author": {
     "name": "various"
   },
