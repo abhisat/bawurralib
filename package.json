@@ -21,6 +21,10 @@
     "cordova-sqlite-storage": "^2.3.1",
     "cordova-windows": "^5.0.0",
     "device": "^0.3.9",
+    "npm": "^6.1.0",
+    "promises": "^0.2.5",
+    "require": "^2.4.20",
+    "save": "^2.3.2",
     "sqlite3": "^4.0.0"
   },
   "cordova": {
