@@ -22,7 +22,7 @@ $(document).ready(function(){
   document.addEventListener("deviceready", offline, false);
 
   function offline(){
-    var key = 'HISTORY';
+    var key = 'SOCIALEMOTIONAL';
     var data = [];
     var bawurradb = null;
       if (device.platform == 'amazon-fireos' || device.platform == 'windows') {
@@ -91,7 +91,6 @@ $(document).ready(function(){
   }
 
   var parseDisclaimer = function(){
-
     $("<button></button>").attr({
       'type':"button",
       'class':"backButton"
@@ -100,7 +99,7 @@ $(document).ready(function(){
     $("<a></a>").attr({
       'href': "index.html"
     }).html("&#8592;").appendTo($(".backButton"));
-    
+
     $("<div></div>").prependTo($(".menuContainer")).addClass("grid-x disclaimer");
     $("<a>Section Disclaimer &raquo;</a>").attr({
       'href': "#",

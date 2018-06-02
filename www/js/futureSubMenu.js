@@ -19,43 +19,78 @@
 $(document).ready(function(){
   var mainMenu;
   var disclaimer;
-  document.addEventListener("deviceready", onDeviceReady, false);
+  document.addEventListener("deviceready", offline, false);
 
-  function onDeviceReady() {
-      var bawurradb = null;
-      var backenddata = null;
-        if (device.platform == 'amazon-fireos' || device.platform == 'windows') {
-          bawurradb = window.sqlitePlugin.openDatabase({
-            name: 'bawurradb',
-            location: 'default',
-            androidDatabaseImplementation: 2
-          });
-        }
-        else if (device.platform == 'ios') {
-          bawurradb = window.sqlitePlugin.openDatabase({
-            name: 'bawurradb.sqlite',
-            iosDatabaseLocation: 'Library'
-          });
-        }
-      bawurradb.transaction(function(tx){
-        tx.executeSql('SELECT * FROM CULTURE;', [], function(tr, dt) {
-          backenddata = dt.rows.item(0).data;
-          parsePage(backenddata)
+  function offline(){
+    var key = 'FUTURE';
+    var data = [];
+    var bawurradb = null;
+      if (device.platform == 'amazon-fireos' || device.platform == 'windows') {
+        bawurradb = window.sqlitePlugin.openDatabase({
+          name: 'bawurradb',
+          location: 'default',
+          androidDatabaseImplementation: 2
+        });
+      }
+      else if (device.platform == 'ios') {
+        bawurradb = window.sqlitePlugin.openDatabase({
+          name: 'bawurradb.sqlite',
+          iosDatabaseLocation: 'Library'
+        });
+      }
 
-        }, function(error) {
-          console.log('SELECT SQL statement ERROR: ' + error.message);
-        })
-      });
-
+      var promise = new Promise(function(resolve, reject){
+      resolve()
+    });
+      promise.then(function(){
+        data[key] = {};
+      }).then(function(){
+        bawurradb.transaction(function(tx){
+            retrieve(tx, key, data).then(function(){
+              parsePage(data, key);
+            });
+        });
+      }).then(function(){
         $.getJSON("data/disclaimer.json", function(result){
             disclaimer = result;
           })
           .done(parseDisclaimer);
-    }
+      })
+  }
 
-    var parsePage = function(data){
-      data_parsed = JSON.parse(data);
+  function retrieve(tx, key, data){
+    return new Promise(function(resolve, reject){
+    tx.executeSql('SELECT * FROM '+ key + ';', [], function(tr, dt) {
+      for (var c = 0; c < dt.rows.length; c++){
+        var num = c;
+        var d = JSON.parse(dt.rows.item(num).data)
+        data[key][d.title] = d;
+      }
+      resolve();
+    }, function(error){
+      console.log('SELECT SQL statement ERROR: ' + error.message);
+      reject();
+    });
+  });
 
+  }
+
+    var parsePage = function(data, key){
+
+      for (var t in data[key]){
+        console.log(data[key][t]);
+        $("<div></div>").appendTo($(".menuContainer")).addClass("grid-x");
+        $("<a></a>").attr('href', "#").appendTo($(".menuContainer").children().last()).addClass("cell medium-12 large-12 small-12");
+        $('<img />').attr({
+              'src': data[key][t].media_1,
+              'alt': data[key][t].title + "image logo",
+          }).appendTo($(".menuContainer").children().last().children().last());
+        $("<bold></bold>").text(data[key][t].title).css('text-transform', 'capitalize').
+        appendTo($(".menuContainer").children().last().children().last());
+      }
+  }
+
+  var parseDisclaimer = function(){
     $("<button></button>").attr({
       'type':"button",
       'class':"backButton"
@@ -64,22 +99,7 @@ $(document).ready(function(){
     $("<a></a>").attr({
       'href': "index.html"
     }).html("&#8592;").appendTo($(".backButton"));
-
-
-    for (var item = 0; item < data_parsed.length; item ++){
-
-      $("<div></div>").appendTo($(".menuContainer")).addClass("grid-x");
-      $("<a></a>").attr('href', "#").appendTo($(".menuContainer").children().last()).addClass("cell medium-12 large-12 small-12");
-      $('<img />').attr({
-            'src': data_parsed[item].media_1,
-            'alt': data_parsed[item].title + "image logo",
-        }).appendTo($(".menuContainer").children().last().children().last());
-      $("<bold></bold>").text(data_parsed[item].title).css('text-transform', 'capitalize').
-      appendTo($(".menuContainer").children().last().children().last());
-    }
-  }
-
-  var parseDisclaimer = function(){
+    
     $("<div></div>").prependTo($(".menuContainer")).addClass("grid-x disclaimer");
     $("<a>Section Disclaimer &raquo;</a>").attr({
       'href': "#",

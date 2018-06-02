@@ -19,7 +19,6 @@
 
 $(document).ready(function() {
   var mainMenu;
-
   document.addEventListener("online", online, false);
   document.addEventListener("offline", offline, false);
 
@@ -28,67 +27,136 @@ $(document).ready(function() {
     document.addEventListener("deviceready", database, false);
   }
   function database(){
-    var p1 = new Promise(function(resolve, reject){
-      $.getJSON("http://bawurralibrary.appspot.com/serveculture").done(function(data){
-        resolve(data);
-    });
-  });
-  p1.then(function(data){
+    var proms = [];
+    var data = {};
+    proms.push(new Promise(function(resolve, reject){
+      $.getJSON("http://bawurralibrary.appspot.com/serveculture").done(function(d){
+        data.culture = d;
+        resolve();
+      });
+    }));
+    proms.push(new Promise(function(resolve, reject){
+      $.getJSON("https://bawurralibrary.appspot.com/serveelders").done(function(d){
+        data.elders = d;
+        resolve();
+      });
+    }));
+    // proms.push(new Promise(function(resolve, reject){
+    //   $.getJSON("https://bawurralibrary.appspot.com/servelanguages").done(function(d){
+    //     data.languages = d;
+    //     resolve();
+    //   });
+    // }));
+    proms.push(new Promise(function(resolve, reject){
+      $.getJSON("https://bawurralibrary.appspot.com/servehistory").done(function(d){
+        data.history = d;
+        resolve();
+      });
+    }));
+    proms.push(new Promise(function(resolve, reject){
+      $.getJSON("https://bawurralibrary.appspot.com/servefuture").done(function(d){
+        data.future = d;
+        resolve();
+      });
+    }));
+    // proms.push(new Promise(function(resolve, reject){
+    //   $.getJSON("https://bawurralibrary.appspot.com/servenations").done(function(d){
+    //     data.nations = d;
+    //     resolve();
+    //   });
+    // }));
+    proms.push(new Promise(function(resolve, reject){
+      $.getJSON("http://bawurralibrary.appspot.com/servedreams").done(function(d){
+        data.dreams = d;
+        resolve();
+      });
+    }));
+    proms.push(new Promise(function(resolve, reject){
+      $.getJSON("http://bawurralibrary.appspot.com/servearts").done(function(d){
+        data.arts = d;
+        resolve();
+      });
+    }));
+    proms.push(new Promise(function(resolve, reject){
+      $.getJSON("http://bawurralibrary.appspot.com/servesocialemotional").done(function(d){
+        data.socialemotional = d;
+        resolve();
+      });
+    }));
+    // proms.push(new Promise(function(resolve, reject){
+    //   $.getJSON("http://bawurralibrary.appspot.com/servespoken").done(function(data){
+    //     data.spoken = d;
+    //     resolve();
+    //   });
+    // }));
+
+
+  Promise.all(proms).then(function(){
     changeToDataURL(data);
   });
-  onDeviceReady();
 }
 
 function changeToDataURL(data){
   var promises = [];
-  var k = [];
-  for (var i = 0; i < data.length; i++){
-    promises.push(new Promise(function(resolve, reject){
-      var k = i;
-      if (data[i].media_1 != 'No Image'){
-        toDataURL(data[k].media_1, function(d){
-            data[k].media_1 = d;
-            resolve();
-          });
-      }
-      else{
-        resolve();
-      }
-    }));
-    promises.push(new Promise(function(resolve, reject){
-      var k = i;
-      if (data[i].media_2 != 'No Image'){
-        toDataURL(data[k].media_2, function(d){
-            data[k].media_2 = d;
-            resolve();
-          });
-      }
-      else{
-        resolve();
-      }
-    }));
-    }
+  console.log("here");
+  for (var key in data){
+    for (var j = 0; j < data[key].length; j++){
+      promises.push(new Promise(function(resolve, reject){
+        var t = key;
+        var k = j;
 
+        if (data[t][k].media_1 != 'No Image'){
+          toDataURL(data[t][k].media_1, function(d){
+              data[t][k].media_1 = d;
+              resolve();
+            });
+        }
+        else{
+          resolve();
+        }
+      }));
+      promises.push(new Promise(function(resolve, reject){
+        var t = key;
+        var k = j;
+        if (data[t][k].media_2 != 'No Image'){
+          toDataURL(data[t][k].media_2, function(d){
+              data[t][k].media_2 = d;
+              resolve();
+            });
+        }
+        else{
+          resolve();
+        }
+      }));
+    }
+  }
   Promise.all(promises).then(function() {
-    var dataArray = [];
-    new Promise(function(resolve, reject){
-      for (var i = 0; i < data.length; i++){
-        var x = i;
-        dataArray.push(JSON.stringify(data[x]));
+    var prom = new Promise(function(resolve, reject){
+      console.log("here");
+      resolve();
+    });
+
+    prom.then(function(){
+      for (var key in data){
+        for (var j = 0; j < data[key].length; j++){
+          var x = key;
+          var y = j;
+          data[x][y] = JSON.stringify(data[x][y]);
+        }
       }
-      console.log("Here"+dataArray);
-      resolve(dataArray);
-    }).then(function(dataArray){
-      entryToDatabase(dataArray);
+    }).then(function(){
+      entryToDatabase(data);
+    }).then(function(){
+      onDeviceReady();
     });
   });
 }
 
 function entryToDatabase(data){
-  console.log(data);
   var bawurradb = null;
-  var backenddata = null;
+  var backenddata = [];
   var st_data = null;
+  console.log(JSON.stringify(data));
     if (device.platform == 'amazon-fireos' || device.platform == 'windows') {
       bawurradb = window.sqlitePlugin.openDatabase({
         name: 'bawurradb',
@@ -102,38 +170,31 @@ function entryToDatabase(data){
         iosDatabaseLocation: 'Library'
       });
     }
-
       bawurradb.transaction(function (tx){
-        tx.executeSql('DROP TABLE IF EXISTS CULTURE;');
-        tx.executeSql('CREATE TABLE IF NOT EXISTS CULTURE (data);', [], function(res) {
+      for (var key in data){
+        var k = key;
+        console.log(key);
+        tx.executeSql('DROP TABLE IF EXISTS ' + key + ';', [], function(res) {
+          console.log("DATABASE DROPPED");
+        }, function(error) {
+            console.log('SELECT SQL statement ERROR: ' + error.message);
+        });
+
+        tx.executeSql('CREATE TABLE IF NOT EXISTS ' + key + '(data);', [], function(res) {
           console.log("DATABASE CREATED");
         }, function(error) {
             console.log('SELECT SQL statement ERROR: ' + error.message);
         });
 
-        tx.executeSql('INSERT INTO CULTURE(data) VALUES (?)', [data], function(rs, dat) {
-          console.log("INSERTED");
-        }, function(error) {
-            console.log('SELECT SQL statement ERROR: ' + error.message);
-        });
-
-        tx.executeSql('SELECT * FROM CULTURE;', [], function(tr, dt) {
-          backenddata = dt.rows.item(0).data;
-          console.log(backenddata);
-          new Promise(function(resolve, reject){
-            for(var i = 0; i < backenddata.length; i++){
-              var a = i;
-              console.log(backenddata[a])
-              JSON.parse(backenddata[a])
-            }
-            resolve();
-          }).then(function(){
-            console.log(backenddata);
+        for (var d = 0; d < data[k].length; d++){
+          tx.executeSql('INSERT INTO '+ key + '(data) VALUES (?)', [data[k][d]], function(rs, dat) {
+            console.log("INSERTED");
+          }, function(error) {
+              console.log('SELECT SQL statement ERROR: ' + error.message);
           });
+        }
 
-        }, function(error) {
-          console.log('SELECT SQL statement ERROR: ' + error.message);
-        });
+      }
     });
 }
 
@@ -152,12 +213,9 @@ function toDataURL(url, callback){
 }
 
 
-
-
   function offline(){
-    document.addEventListener("deviceready", onDeviceReady, false);
+      onDeviceReady();
   }
-
 
 
 
@@ -185,7 +243,7 @@ var parsePage = function() {
       if (item % 2 == 0) {
         $("<div></div>").appendTo($(".menuContainer")).addClass("grid-x");
       }
-      $("<a></a>").attr("href", itemList[item] + "SubMenu.html", "class", "mainMenuItems").appendTo($(".menuContainer").children().last()).addClass("cell medium-6 large-6 small-6")
+      $("<a></a>").attr("href", itemList[item].replace(/\s/g, '') + "SubMenu.html", "class", "mainMenuItems").appendTo($(".menuContainer").children().last()).addClass("cell medium-6 large-6 small-6")
       .css({
         'color': '#4B0000',
         'font-size': '1.5em',
