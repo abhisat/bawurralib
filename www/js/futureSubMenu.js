@@ -80,7 +80,12 @@ $(document).ready(function(){
       for (var t in data[key]){
         console.log(data[key][t]);
         $("<div></div>").appendTo($(".menuContainer")).addClass("grid-x");
-        $("<a></a>").attr('href', "#").appendTo($(".menuContainer").children().last()).addClass("cell medium-12 large-12 small-12");
+        $("<a></a>").attr({
+          'href': "futureItem.html",
+          'id': JSON.stringify(data[key][t]),
+        }).click(function(){
+          localStorage.setItem('data', this.id)
+        }).appendTo($(".menuContainer").children().last()).addClass("cell medium-12 large-12 small-12");
         $('<img />').attr({
               'src': data[key][t].media_1,
               'alt': data[key][t].title + "image logo",
@@ -99,7 +104,7 @@ $(document).ready(function(){
     $("<a></a>").attr({
       'href': "index.html"
     }).html("&#8592;").appendTo($(".backButton"));
-    
+
     $("<div></div>").prependTo($(".menuContainer")).addClass("grid-x disclaimer");
     $("<a>Section Disclaimer &raquo;</a>").attr({
       'href': "#",

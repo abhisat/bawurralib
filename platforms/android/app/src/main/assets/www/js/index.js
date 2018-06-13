@@ -97,8 +97,8 @@ $(document).ready(function() {
 }
 
 function changeToDataURL(data){
+  console.log(data)
   var promises = [];
-  console.log("here");
   for (var key in data){
     for (var j = 0; j < data[key].length; j++){
       promises.push(new Promise(function(resolve, reject){
@@ -132,7 +132,6 @@ function changeToDataURL(data){
   }
   Promise.all(promises).then(function() {
     var prom = new Promise(function(resolve, reject){
-      console.log("here");
       resolve();
     });
 
@@ -147,12 +146,14 @@ function changeToDataURL(data){
     }).then(function(){
       entryToDatabase(data);
     }).then(function(){
+      console.log(here);
       onDeviceReady();
     });
   });
 }
 
 function entryToDatabase(data){
+console.log(data);
   var bawurradb = null;
   var backenddata = [];
   var st_data = null;
