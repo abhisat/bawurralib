@@ -97,7 +97,7 @@ $(document).ready(function() {
 }
 
 function changeToDataURL(data){
-  console.log(data)
+
   var promises = [];
   for (var key in data){
     for (var j = 0; j < data[key].length; j++){
@@ -137,27 +137,31 @@ function changeToDataURL(data){
 
     prom.then(function(){
       for (var key in data){
-        for (var j = 0; j < data[key].length; j++){
+        for (var obj in data[key]){
           var x = key;
-          var y = j;
+          var y = obj
           data[x][y] = JSON.stringify(data[x][y]);
         }
       }
     }).then(function(){
       entryToDatabase(data);
     }).then(function(){
-      console.log(here);
       onDeviceReady();
     });
   });
 }
 
 function entryToDatabase(data){
-console.log(data);
+
   var bawurradb = null;
   var backenddata = [];
   var st_data = null;
-  console.log(JSON.stringify(data));
+
+  var promise = new Promise((res,rej)=>{
+    res();
+  });
+
+  promise.then(()=>{
     if (device.platform == 'amazon-fireos' || device.platform == 'windows') {
       bawurradb = window.sqlitePlugin.openDatabase({
         name: 'bawurradb',
@@ -171,32 +175,36 @@ console.log(data);
         iosDatabaseLocation: 'Library'
       });
     }
-      bawurradb.transaction(function (tx){
+  }).then(()=>{
       for (var key in data){
-        var k = key;
-        console.log(key);
-        tx.executeSql('DROP TABLE IF EXISTS ' + key + ';', [], function(res) {
-          console.log("DATABASE DROPPED");
-        }, function(error) {
-            console.log('SELECT SQL statement ERROR: ' + error.message);
-        });
-
-        tx.executeSql('CREATE TABLE IF NOT EXISTS ' + key + '(data);', [], function(res) {
-          console.log("DATABASE CREATED");
-        }, function(error) {
-            console.log('SELECT SQL statement ERROR: ' + error.message);
-        });
-
-        for (var d = 0; d < data[k].length; d++){
-          tx.executeSql('INSERT INTO '+ key + '(data) VALUES (?)', [data[k][d]], function(rs, dat) {
-            console.log("INSERTED");
-          }, function(error) {
-              console.log('SELECT SQL statement ERROR: ' + error.message);
-          });
-        }
-
+        createDropDb(bawurradb, key, data);
       }
-    });
+
+});
+}
+
+function createDropDb (bawurradb, key, data){
+  bawurradb.executeSql('DROP TABLE IF EXISTS ' + key + ';', [], function() {
+    console.log(key + " DATABASE DROPPED");
+    bawurradb.executeSql('CREATE TABLE IF NOT EXISTS ' + key + '(data);', [], function() {
+      console.log(key + " DATABASE CREATED");
+      for (var val = 0; val < data[key].length; val++){
+        insertIntoDB(bawurradb, data[key][val], key);
+      }
+        }, function(error) {
+          console.log('SELECT SQL statement ERROR: ' + error.message);
+        });
+      }, function(error) {
+          console.log('SELECT SQL statement ERROR: ' + error.message);
+        });
+      }
+
+function insertIntoDB(db, data, key){
+    db.executeSql('INSERT INTO '+ key + '(data) VALUES (?)', [data], function(rs, dat) {
+          console.log("INSERTED INTO " + key);
+      }, function(error) {
+          console.log('SELECT SQL statement ERROR: ' + error.message);
+      });
 }
 
 function toDataURL(url, callback){

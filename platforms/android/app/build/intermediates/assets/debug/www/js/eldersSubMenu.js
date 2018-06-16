@@ -46,10 +46,10 @@ $(document).ready(function(){
         data[key] = {};
       }).then(function(){
         bawurradb.transaction(function(tx){
-            retrieve(tx, key, data).then(function(){
-              parsePage(data, key);
-            });
+            retrieve(tx, key, data);
         });
+      }).then(function(){
+        parsePage(data, key);
       }).then(function(){
         $.getJSON("data/disclaimer.json", function(result){
             disclaimer = result;
@@ -59,24 +59,19 @@ $(document).ready(function(){
   }
 
   function retrieve(tx, key, data){
-    return new Promise(function(resolve, reject){
     tx.executeSql('SELECT * FROM '+ key + ';', [], function(tr, dt) {
       for (var c = 0; c < dt.rows.length; c++){
         var num = c;
-        var d = JSON.parse(dt.rows.item(num).data)
+        var d = JSON.parse(dt.rows.item(num).data);
         data[key][d.title] = d;
       }
-      resolve();
     }, function(error){
       console.log('SELECT SQL statement ERROR: ' + error.message);
-      reject();
     });
-  });
-
   }
 
     var parsePage = function(data, key){
-
+      console.log("here");
       for (var t in data[key]){
         console.log(data[key][t]);
         $("<div></div>").appendTo($(".menuContainer")).addClass("grid-x");

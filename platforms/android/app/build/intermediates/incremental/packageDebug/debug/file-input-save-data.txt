@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Sun Jun 03 19:13:33 AEST 2018
+#Thu Jun 14 19:21:59 AEST 2018
 122.file=/Users/abs/Bawurra/bawurralib/platforms/android/app/build/intermediates/assets/debug/www/historySubMenu.html
 60.set=ASSET
 129.file=/Users/abs/Bawurra/bawurralib/platforms/android/app/build/intermediates/assets/debug/www/js/eldersSubMenu.js
