@@ -19,72 +19,91 @@
 $(document).ready(function(){
   var mainMenu;
   var disclaimer;
-  document.addEventListener("deviceready", offline, false);
+  var data = {};
+  var key = 'nations';
+  document.addEventListener("deviceready", online, false);
 
-  function offline(){
-    var key = 'CULTURE';
-    var data = [];
-    var bawurradb = null;
-      if (device.platform == 'amazon-fireos' || device.platform == 'windows') {
-        bawurradb = window.sqlitePlugin.openDatabase({
-          name: 'bawurradb',
-          location: 'default',
-          androidDatabaseImplementation: 2
-        });
-      }
-      else if (device.platform == 'ios') {
-        bawurradb = window.sqlitePlugin.openDatabase({
-          name: 'bawurradb.sqlite',
-          iosDatabaseLocation: 'Library'
-        });
-      }
+  // function offline(){
+  //   var key = 'CULTURE';
+  //   var data = [];
+  //   var bawurradb = null;
+  //     if (device.platform == 'amazon-fireos' || device.platform == 'windows') {
+  //       bawurradb = window.sqlitePlugin.openDatabase({
+  //         name: 'bawurradb',
+  //         location: 'default',
+  //         androidDatabaseImplementation: 2
+  //       });
+  //     }
+  //     else if (device.platform == 'ios') {
+  //       bawurradb = window.sqlitePlugin.openDatabase({
+  //         name: 'bawurradb.sqlite',
+  //         iosDatabaseLocation: 'Library'
+  //       });
+  //     }
+  //
+  //     var promise = new Promise(function(resolve, reject){
+  //     resolve()
+  //   });
+  //     promise.then(function(){
+  //       data[key] = {};
+  //     }).then(function(){
+  //       bawurradb.transaction(function(tx){
+  //           retrieve(tx, key, data).then(function(dat){
+  //             for (var c = 0; c < dat.rows.length; c++){
+  //               var num = c;
+  //               var d = JSON.parse(dat.rows.item(num).data)
+  //               console.log(d);
+  //               data[key][d.title] = d;
+  //             }
+  //           }).then(function(){
+  //             parsePage(data, key);
+  //           });
+  //       });
+  //     }).then(function(){
+  //       $.getJSON("data/disclaimer.json", function(result){
+  //           disclaimer = result;
+  //         })
+  //         .done(parseDisclaimer);
+  //     })
+  // }
+  //
+  // function retrieve(tx, key, data){
+  //   return new Promise(function(resolve, reject){
+  //     tx.executeSql('SELECT * FROM '+ key + ';', [], function(tr, dt) {
+  //       resolve(dt);
+  //     }, function(error){
+  //       console.log('SELECT SQL statement ERROR: ' + error.message);
+  //       reject();
+  //     });
+  //   });
+  // }
 
-      var promise = new Promise(function(resolve, reject){
-      resolve()
+  function online(){
+    var promise = new Promise(function(res, rej){
+      $.getJSON("http://bawurralibrary.appspot.com/servenations").done(function(d){
+        data[key] = d;
+        res();
+      });
     });
-      promise.then(function(){
-        data[key] = {};
-      }).then(function(){
-        bawurradb.transaction(function(tx){
-            retrieve(tx, key, data).then(function(){
-              parsePage(data, key);
-            });
-        });
-      }).then(function(){
-        $.getJSON("data/disclaimer.json", function(result){
-            disclaimer = result;
-          })
-          .done(parseDisclaimer);
-      })
+    promise.then(parsePage)
+    .then(function(){
+      $.getJSON("data/disclaimer.json", function(result){
+        disclaimer = result;
+      }).done(parseDisclaimer);
+    });
+
   }
 
-  function retrieve(tx, key, data){
-    return new Promise(function(resolve, reject){
-    tx.executeSql('SELECT * FROM '+ key + ';', [], function(tr, dt) {
-      for (var c = 0; c < dt.rows.length; c++){
-        var num = c;
-        var d = JSON.parse(dt.rows.item(num).data)
-        data[key][d.title] = d;
-      }
-      resolve();
-    }, function(error){
-      console.log('SELECT SQL statement ERROR: ' + error.message);
-      reject();
-    });
-  });
-
-  }
-
-    var parsePage = function(data, key){
-
+    var parsePage = function(){
+console.log(data);
       for (var t in data[key]){
-        console.log(data[key][t]);
         $("<div></div>").appendTo($(".menuContainer")).addClass("grid-x");
-        $("<a></a>").attr('href', "#").appendTo($(".menuContainer").children().last()).addClass("cell medium-12 large-12 small-12");
-        $('<img />').attr({
-              'src': data[key][t].media_1,
-              'alt': data[key][t].title + "image logo",
-          }).appendTo($(".menuContainer").children().last().children().last());
+        $("<a></a>").attr({
+          'href': "dreamingItem.html",
+          'id': JSON.stringify(data[key][t]),
+        }).click(function(){
+          localStorage.setItem('data', this.id)
+        }).appendTo($(".menuContainer").children().last()).addClass("cell medium-12 large-12 small-12");
         $("<bold></bold>").text(data[key][t].title).css('text-transform', 'capitalize').
         appendTo($(".menuContainer").children().last().children().last());
       }
@@ -100,7 +119,7 @@ $(document).ready(function(){
     $("<a></a>").attr({
       'href': "index.html"
     }).html("&#8592;").appendTo($(".backButton"));
-    
+
     $("<div></div>").prependTo($(".menuContainer")).addClass("grid-x disclaimer");
     $("<a>Section Disclaimer &raquo;</a>").attr({
       'href': "#",

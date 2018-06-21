@@ -19,7 +19,7 @@
 
 $(document).ready(function() {
   var mainMenu;
-  document.addEventListener("online", online, false);
+  document.addEventListener("online", onDeviceReady, false);
   document.addEventListener("offline", offline, false);
 
 
@@ -41,12 +41,12 @@ $(document).ready(function() {
         resolve();
       });
     }));
-    // proms.push(new Promise(function(resolve, reject){
-    //   $.getJSON("https://bawurralibrary.appspot.com/servelanguages").done(function(d){
-    //     data.languages = d;
-    //     resolve();
-    //   });
-    // }));
+    proms.push(new Promise(function(resolve, reject){
+      $.getJSON("https://bawurralibrary.appspot.com/servelanguages").done(function(d){
+        data.languages = d;
+        resolve();
+      });
+    }));
     proms.push(new Promise(function(resolve, reject){
       $.getJSON("https://bawurralibrary.appspot.com/servehistory").done(function(d){
         data.history = d;
@@ -59,12 +59,12 @@ $(document).ready(function() {
         resolve();
       });
     }));
-    // proms.push(new Promise(function(resolve, reject){
-    //   $.getJSON("https://bawurralibrary.appspot.com/servenations").done(function(d){
-    //     data.nations = d;
-    //     resolve();
-    //   });
-    // }));
+    proms.push(new Promise(function(resolve, reject){
+      $.getJSON("https://bawurralibrary.appspot.com/servenations").done(function(d){
+        data.nations = d;
+        resolve();
+      });
+    }));
     proms.push(new Promise(function(resolve, reject){
       $.getJSON("http://bawurralibrary.appspot.com/servedreams").done(function(d){
         data.dreams = d;
@@ -83,12 +83,12 @@ $(document).ready(function() {
         resolve();
       });
     }));
-    // proms.push(new Promise(function(resolve, reject){
-    //   $.getJSON("http://bawurralibrary.appspot.com/servespoken").done(function(data){
-    //     data.spoken = d;
-    //     resolve();
-    //   });
-    // }));
+    proms.push(new Promise(function(resolve, reject){
+      $.getJSON("http://bawurralibrary.appspot.com/servespoken").done(function(d){
+        data.spoken = d;
+        resolve();
+      });
+    }));
 
 
   Promise.all(proms).then(function(){
@@ -100,34 +100,53 @@ function changeToDataURL(data){
 
   var promises = [];
   for (var key in data){
-    for (var j = 0; j < data[key].length; j++){
-      promises.push(new Promise(function(resolve, reject){
-        var t = key;
-        var k = j;
+    if(key != 'nations'){
+      for (var j = 0; j < data[key].length; j++){
+        if(key != 'languages'){
+          promises.push(new Promise(function(resolve, reject){
+            var t = key;
+            var k = j;
 
-        if (data[t][k].media_1 != 'No Image'){
-          toDataURL(data[t][k].media_1, function(d){
-              data[t][k].media_1 = d;
+            if (data[t][k].media_1 != 'No Image'){
+              toDataURL(data[t][k].media_1, function(d){
+                  data[t][k].media_1 = d;
+                  resolve();
+                });
+            }
+            else{
               resolve();
-            });
+            }
+          }));
+          promises.push(new Promise(function(resolve, reject){
+            var t = key;
+            var k = j;
+            if (data[t][k].media_2 != 'No Image'){
+              toDataURL(data[t][k].media_2, function(d){
+                  data[t][k].media_2 = d;
+                  resolve();
+                });
+            }
+            else{
+              resolve();
+            }
+          }));
         }
         else{
-          resolve();
-        }
-      }));
-      promises.push(new Promise(function(resolve, reject){
-        var t = key;
-        var k = j;
-        if (data[t][k].media_2 != 'No Image'){
-          toDataURL(data[t][k].media_2, function(d){
-              data[t][k].media_2 = d;
+          promises.push(new Promise(function(resolve, reject){
+            var t = key;
+            var k = j;
+            if (data[t][k].media != 'No Image'){
+              toDataURL(data[t][k].media, function(d){
+                  data[t][k].media = d;
+                  resolve();
+                });
+            }
+            else{
               resolve();
-            });
+            }
+          }));
         }
-        else{
-          resolve();
-        }
-      }));
+      }
     }
   }
   Promise.all(promises).then(function() {
@@ -200,11 +219,19 @@ function createDropDb (bawurradb, key, data){
       }
 
 function insertIntoDB(db, data, key){
-    db.executeSql('INSERT INTO '+ key + '(data) VALUES (?)', [data], function(rs, dat) {
-          console.log("INSERTED INTO " + key);
+  db.transaction(function(tx){
+    var k = key;
+    tx.executeSql('INSERT INTO ' + k + '(data) VALUES (?);', [data], function(rs, dat) {
+          console.log("INSERTED INTO " + k);
+          tx.executeSql('SELECT * FROM '+ key + ';', [], function(tr, dt) {
+            console.log(dt.rows.item(1).data==null);
+          }, function(error){
+            console.log('SELECT SQL statement ERROR: ' + error.message);
+          });
       }, function(error) {
           console.log('SELECT SQL statement ERROR: ' + error.message);
       });
+  });
 }
 
 function toDataURL(url, callback){
