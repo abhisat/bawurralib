@@ -29,12 +29,12 @@ $(document).ready(function(){
       'class':"backButton"
     }).appendTo($(".top-bar-left"));
     $("<a></a>").attr({
-      'href': "cultureSubMenu.html"
+      'href': "futureSubMenu.html"
     }).html("&#8592;").appendTo($(".backButton"));
     console.log(data);
 
     $("<div></div>").appendTo($(".menuContainer")).addClass('title');
-    $("<h1></h1>").text(data.title).appendTo($(".title"));
+    $("<h1></h1>").text(data.title).css('text-transform', 'capitalize').appendTo($(".title"));
     $('<img />').attr({
           'src': data.media_1,
           'alt': data.title + "image logo",

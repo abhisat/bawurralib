@@ -29,23 +29,24 @@ $(document).ready(function(){
       'class':"backButton"
     }).appendTo($(".top-bar-left"));
     $("<a></a>").attr({
-      'href': "socialEmotionalWellbeingSubMenu.html"
+      'href': "nationsSubMenu.html"
     }).html("&#8592;").appendTo($(".backButton"));
     console.log(data);
 
     $("<div></div>").appendTo($(".menuContainer")).addClass('title');
     $("<h1></h1>").text(data.title).css('text-transform', 'capitalize').appendTo($(".title"));
-    $('<img />').attr({
-          'src': data.media_1,
-          'alt': data.title + "image logo",
-      }).appendTo($(".menuContainer"));
+    $("<h3></h3>").text(data.subtitle).appendTo($(".title"));
+    // $('<img />').attr({
+    //       'src': data.media_1,
+    //       'alt': data.title + "image logo",
+    //   }).appendTo($(".menuContainer"));
     $("<p></p>").text(data.body).appendTo($(".menuContainer"));
-    if (data.media_2 != 'No Image'){
-      $('<img />').attr({
-            'src': data.media_2,
-            'alt': data.title + "image logo",
-        }).appendTo($(".menuContainer"));
-    }
+    // if (data.media_2 != 'No Image'){
+    //   $('<img />').attr({
+    //         'src': data.media_2,
+    //         'alt': data.title + "image logo",
+    //     }).appendTo($(".menuContainer"));
+  // }
   }
 
   $(document).foundation();

@@ -95,7 +95,7 @@ $(document).ready(function(){
   }
 
     var parsePage = function(){
-console.log(data);
+
       for (var t in data[key]){
         $("<div></div>").appendTo($(".menuContainer")).addClass("grid-x");
         $("<a></a>").attr({

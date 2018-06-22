@@ -20,7 +20,7 @@ $(document).ready(function(){
   var mainMenu;
   var disclaimer;
   var data = {};
-  var key = 'dreams';
+  var key = 'socialEmotional';
   document.addEventListener("deviceready", online, false);
 
   // function offline(){

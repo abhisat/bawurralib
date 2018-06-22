@@ -99,15 +99,15 @@ console.log(data);
       for (var t in data[key]){
         $("<div></div>").appendTo($(".menuContainer")).addClass("grid-x");
         $("<a></a>").attr({
-          'href': "dreamingItem.html",
+          'href': "languagesItem.html",
           'id': JSON.stringify(data[key][t]),
         }).click(function(){
           localStorage.setItem('data', this.id)
         }).appendTo($(".menuContainer").children().last()).addClass("cell medium-12 large-12 small-12");
-        $('<img />').attr({
-              'src': data[key][t].media,
-              'alt': data[key][t].title + "image logo",
-          }).appendTo($(".menuContainer").children().last().children().last());
+        // $('<img />').attr({
+        //       'src': data[key][t].media,
+        //       'alt': data[key][t].title + "image logo",
+        //   }).appendTo($(".menuContainer").children().last().children().last());
         $("<bold></bold>").text(data[key][t].title).css('text-transform', 'capitalize').
         appendTo($(".menuContainer").children().last().children().last());
       }

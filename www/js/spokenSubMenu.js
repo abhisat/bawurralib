@@ -99,7 +99,7 @@ console.log(data);
       for (var t in data[key]){
         $("<div></div>").appendTo($(".menuContainer")).addClass("grid-x");
         $("<a></a>").attr({
-          'href': "dreamingItem.html",
+          'href': "spokenItem.html",
           'id': JSON.stringify(data[key][t]),
         }).click(function(){
           localStorage.setItem('data', this.id)
