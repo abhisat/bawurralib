@@ -1,34 +1,34 @@
 {"number": 10,
     "items": {
         "culture": {
-          "imgSrc": "img/culture.png"
+          "imgSrc": "img/Culture.png"
           },
         "elders": {
-          "imgSrc": "img/elders.png"
+          "imgSrc": "img/Elders.png"
           },
         "languages": {
-          "imgSrc": "img/languages.png"
+          "imgSrc": "img/Languages.png"
         },
         "history": {
-          "imgSrc": "img/history.png"
+          "imgSrc": "img/History.png"
         },
         "future": {
-          "imgSrc": "img/future.png"
+          "imgSrc": "img/Future.png"
           },
         "nations": {
-          "imgSrc": "img/nations.png"
+          "imgSrc": "img/Nations.png"
         },
-        "dreaming": {
-          "imgSrc": "img/nations.png"
+        "community": {
+          "imgSrc": "img/Community.png"
         },
         "arts": {
-          "imgSrc": "img/nations.png"
+          "imgSrc": "img/Arts.png"
         },
         "social and Emotional Wellbeing": {
-          "imgSrc": "img/nations.png"
+          "imgSrc": "img/SEWB.png"
         },
-        "spoken": {
-          "imgSrc": "img/nations.png"
+        "music": {
+          "imgSrc": "img/Music.png"
         }
     }
   }

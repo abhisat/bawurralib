@@ -97,8 +97,9 @@ $(document).ready(function(){
     var parsePage = function(){
 console.log(data);
       for (var t in data[key]){
-        $("<div></div>").appendTo($(".menuContainer")).addClass("grid-x");
+        $("<div></div>").appendTo($(".menuContainer")).addClass("grid-x menuItem");
         $("<a></a>").attr({
+          'class': "menuLink",
           'href': "socialEmotionalItem.html",
           'id': JSON.stringify(data[key][t]),
         }).click(function(){
@@ -114,23 +115,26 @@ console.log(data);
   }
 
   var parseDisclaimer = function(){
-
-    $("<button></button>").attr({
-      'type':"button",
-      'class':"backButton"
-    }).appendTo($(".top-bar-left"));
-
     $("<a></a>").attr({
       'href': "index.html"
     }).html("&#8592;").appendTo($(".backButton"));
 
-    $("<div></div>").prependTo($(".menuContainer")).addClass("grid-x disclaimer");
-    $("<a>Section Disclaimer &raquo;</a>").attr({
-      'href': "#",
+    $("<div></div>").prependTo($(".menuContainer")).css('width', '100%').addClass("grid-x disclaimer");
+    $("<h1>Section Disclaimer &raquo;</h1>").attr({
       'class': "button",
+      'id': 'disclaimer',
       'data-dropdown': "drop"
-    }).prependTo($(".menuContainer").find($(".disclaimer")));
-    $("<p></p>").text(disclaimer.disclaimer).appendTo($(".menuContainer").find($(".button")));
+    }).css('width', '100%').prependTo($(".menuContainer").on('click',
+    function(){
+      if($('.disclaimerDrop').css('display') == 'none'){
+          $('.disclaimerDrop').show();
+      }
+      else {
+        $('.disclaimerDrop').hide();
+      }
+    }).find($(".disclaimer")));
+    $("<p></p>").addClass('disclaimerDrop').text(disclaimer.disclaimer).hide().appendTo($(".menuContainer").find($(".button")));
+
     }
 
 
