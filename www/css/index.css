@@ -28,13 +28,7 @@
  .pan{
    font-size: 1em !important;
  }
-.tabs-title > a:focus, .tabs-title > a[aria-selected='true']{
-  color: #750000 !important;
 
-}
- .tabs{
-   background-color: #750000 !important;
- }
  .tabs-title{
    float: none !important;
    margin-left: auto;

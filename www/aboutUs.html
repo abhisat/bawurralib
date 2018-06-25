@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+      <base href="."></base>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+<meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; img-src * 'self' data:;">        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/foundation.min.css">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" type="text/css" href="css/aboutUs.css">
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/jQuery.js"></script>
+        <script type="text/javascript" src="js/popper.js"></script>
+        <script type="text/javascript" src="js/foundation.min.js"></script>
+        <title>Bawurra Library</title>
+    </head>
+    <body>
+      <div class="header">
+        <div class="grid-x">
+          <strong id='mainHeader'>About Us</strong>
+        </div>
+        <div class="grix-x">
+
+            <ul class="tabs" data-responsive-accordion-tabs="tabs medium-accordion large-tabs" id="example-tabs">
+              <center>
+                <li id="tab1" class="tabs-title is-active"><a id="link1" class="pan" href="index.html" style="color: white;" >Library</a></li>
+                <li id="tab2" class="tabs-title"><a id="link2" class="pan" href="aboutUs.html" style="color: white;">About Us</a></li>
+              </center>
+            </ul>
+
+
+          </div>
+        </div>
+
+      <div class="menuContainer">
+        <img src="img/aboutUs.png" alt="Bawurra Foundation Logo" width="100%" height="auto">
+        <p>
+          <br>
+          <b class='headings'>About Us</b>
+          <br>
+          <br>
+          Bawurra Foundation is a not-for-profit organisation helping improve literacy ability in Aboriginal
+          and Torres Strait Islander children. We want to celebrate Indigenous culture and make it a source
+          of pride.
+          <br>
+          <br>
+          <b class='headings'>Bawurra</b><br>
+          <br>
+          <br>
+          <div style="border: none;" class="grid-x grid-padding-x">
+            <div class="cell small-4 medium-4 large-4"><img src="img/Jesse.png"/></div>
+            <div class="cell small-8 medium-8 large-8"><p>“Bawurra means Red Kangaroo in the Gamilaraay language. It symbolizes leadership and strength and
+            is an important totem in our shared Indigenous culture.”<p>
+            <p style="color: #750000;">Jesse Slok, Co-Founder</div>
+          </div>
+
+          <br>
+          <br>
+          <b class='headings'>Important Acknowledgements</b>
+          <br>
+          <br>
+          Aboriginal and Torres Strait Islander viewers are warned that the content on this app may contain
+          images and references to deceased persons.
+          <br>
+          <br>
+          Bawura Foundation acknowledges that all information preserved through our actions is done so in
+          accordance with Indigenous Cultural and Intellectual Property protocols. This knowledge remains as
+          the property of the Elders, Community, Nations from which it is donated and can be changed,
+          modified or altered at any time by request of its contributer or through community consultation.
+        </p>
+      </div>
+    </body>
+    <script>
+    $("#tab1").css('background-color', '#750000');
+    $("#tab2").css('background-color', 'white');
+    $("#link1").css('color', "white");
+    $("#link2").css('color', "#750000");
+    </script>
+</html>

@@ -22,7 +22,10 @@ $(document).ready(function(){
   var data = {};
   var key = 'culture';
   document.addEventListener("deviceready", online, false);
-
+  $("#tab1").css('background-color', 'white');
+  $("#tab2").css('background-color', '#750000');
+  $("#link1").css('color', "#750000");
+  $("#link2").css('color', "white");
   // function offline(){
   //   var key = 'CULTURE';
   //   var data = [];

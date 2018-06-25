@@ -1,0 +1,26 @@
+.head{
+  background-color: #750000 !important;
+  height: 4em;
+  margin-bottom: 1em;
+}
+.homeButton{
+  margin: auto;
+}
+.home{
+  color: white;
+}
+.menuContainer{
+  margin: 1em;
+}
+.titleText {
+  text-align: center;
+  font-weight: bold;
+  color: #750000;
+}
+.bodyText{
+  font-size: 1em;
+}
+.subTitleText{
+  text-align: center;
+  margin-bottom: 1em;
+}

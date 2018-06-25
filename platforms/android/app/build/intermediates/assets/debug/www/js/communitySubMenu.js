@@ -22,7 +22,10 @@ $(document).ready(function(){
   var data = {};
   var key = 'community';
   document.addEventListener("deviceready", online, false);
-
+  $("#tab1").css('background-color', 'white');
+  $("#tab2").css('background-color', '#750000');
+  $("#link1").css('color', "#750000");
+  $("#link2").css('color', "white");
   // function offline(){
   //   var key = 'CULTURE';
   //   var data = [];
@@ -100,7 +103,7 @@ console.log(data);
         $("<div></div>").appendTo($(".menuContainer")).addClass("grid-x menuItem");
         $("<a></a>").attr({
           'class': "menuLink",
-          'href': "dreamingItem.html",
+          'href': "communityItem.html",
           'id': JSON.stringify(data[key][t]),
         }).click(function(){
           localStorage.setItem('data', this.id)

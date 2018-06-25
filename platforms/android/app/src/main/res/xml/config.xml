@@ -30,7 +30,7 @@
     </author>
     <content src="index.html" />
     <access origin="*" />
-    <icon density="mdpi" height="57" platform="android" src="res/icon/android/bawurra.jpg" width="57" />
+    <icon density="mdpi" height="57" platform="android" src="www/img/logo.png" width="57" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <allow-intent href="tel:*" />

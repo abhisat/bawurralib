@@ -34,13 +34,20 @@ $(document).ready(function(){
     console.log(data);
 
     $("<div></div>").appendTo($(".menuContainer")).addClass('title');
-    $("<h1></h1>").text(data.title).css('text-transform', 'capitalize').appendTo($(".title"));
-    $("<h3></h3>").text(data.subtitle).appendTo($(".title"));
+    $("<h1></h1>").addClass('titleText').text(data.title).css('text-transform', 'capitalize').appendTo($(".title"));
+    $("<h3></h3>").addClass('subTitleText').text(data.subtitle).appendTo($(".title"));
     // $('<img />').attr({
     //       'src': data.media_1,
     //       'alt': data.title + "image logo",
     //   }).appendTo($(".menuContainer"));
-    $("<p></p>").text(data.body).appendTo($(".menuContainer"));
+    $("<p></p>").addClass('bodyText').text(data.body).appendTo($(".menuContainer"));
+    if(data.video != undefined){
+      $("<iframe></iframe>").attr({
+        'width': '500',
+        'height': '500',
+        'src': data.video
+      }).appendTo($(".menuContainer"));
+    }
     // if (data.media_2 != 'No Image'){
     //   $('<img />').attr({
     //         'src': data.media_2,
