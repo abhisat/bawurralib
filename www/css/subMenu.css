@@ -15,3 +15,6 @@ img{
 a img{
   margin-right: 1.6em;
 }
+.tabs{
+  border: 1px solid #750000 !important;
+}

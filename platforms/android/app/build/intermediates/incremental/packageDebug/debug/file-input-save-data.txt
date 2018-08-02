@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Mon Jun 25 20:12:40 AEST 2018
+#Mon Jun 25 22:11:46 AEST 2018
 122.file=/Users/abs/Bawurra/bawurralib/platforms/android/app/build/intermediates/assets/debug/www/languagesItem.html
 60.set=ASSET
 129.file=/Users/abs/Bawurra/bawurralib/platforms/android/app/build/intermediates/assets/debug/www/img/Jesse.png

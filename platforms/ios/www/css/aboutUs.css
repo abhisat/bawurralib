@@ -1,0 +1,11 @@
+.headings{
+  font-size: larger !important;
+  color: #750000 !important;
+}
+
+.menuContainer{
+  margin: 20px;
+}
+.cell{
+  border: none !important;
+}

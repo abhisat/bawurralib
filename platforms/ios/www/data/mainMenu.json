@@ -1,0 +1,34 @@
+{"number": 10,
+    "items": {
+        "culture": {
+          "imgSrc": "img/Culture.png"
+          },
+        "elders": {
+          "imgSrc": "img/Elders.png"
+          },
+        "languages": {
+          "imgSrc": "img/Languages.png"
+        },
+        "history": {
+          "imgSrc": "img/History.png"
+        },
+        "future": {
+          "imgSrc": "img/Future.png"
+          },
+        "nations": {
+          "imgSrc": "img/Nations.png"
+        },
+        "community": {
+          "imgSrc": "img/Community.png"
+        },
+        "arts": {
+          "imgSrc": "img/Arts.png"
+        },
+        "social and Emotional Wellbeing": {
+          "imgSrc": "img/SEWB.png"
+        },
+        "music": {
+          "imgSrc": "img/Music.png"
+        }
+    }
+  }

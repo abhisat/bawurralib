@@ -1,0 +1,17 @@
+img{
+  width: 100px;
+  height: 80px !important;
+}
+.menuItem{
+  height: 6em;
+}
+.menuLink{
+  color: #750000;
+  font-weight: bold;
+  font-weight: bold;
+  font-size: 1.3em;
+  padding: 0.5em;
+}
+a img{
+  margin-right: 1.6em;
+}
